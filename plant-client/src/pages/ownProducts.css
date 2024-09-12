@@ -1,0 +1,16 @@
+.viewHead{
+    text-align: center;
+    color: rgb(175, 120, 81);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    font-size: 80px;
+    padding-top: 80px;
+    opacity: 3px 3px 50px white;
+    font-size: 90px;
+   /* background: url(./img/textBg.webp); */
+   background-image: url('/public/img/homebg6.jpg');
+   background-size: cover;
+   background-clip: text;
+   -webkit-background-clip: text;
+   color: transparent;
+}

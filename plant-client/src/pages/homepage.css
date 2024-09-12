@@ -1,0 +1,100 @@
+.custom-slider {
+    height: 81vh;
+   
+     /* Set your desired height */
+  }
+  
+  .custom-slider .awssld__bullets  {
+    /* height: 100%; Ensures the slides take up the full height */
+    bottom: 8px;
+    z-index: 10;
+  }
+  .bg1{
+   
+    height: 130vh;
+  }
+  .bg2{
+    height: 140vh;
+  }
+  .custom-slider .awssld__content {
+    background-color: white;
+  }
+  .s-content{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    /* color: aliceblue; */
+    color: green #111 red;
+  }
+  .s-content2{
+    position: absolute;
+    top: 300px;
+    left: 200px;
+    /* color: aliceblue; */
+    /* color:rgb(125, 119, 153) */
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    /* text-shadow: 12px 12px 12px  white; */
+  }
+  .hello{
+    /* backdrop-filter: blur(30px); */
+    /* box-shadow: 10px 10px 20px #111,-10px -10px 20px #ddd; */
+    font-size: 65px;
+    color: rgb(100, 78, 78);
+  }
+  .col-img:hover{
+      transform: scaleX(1.5);
+      transition: 2s;
+  }
+  .card{
+    flex:1;
+    cursor: pointer;
+  }
+  .card:hover{
+    flex:3
+  }
+  /* .col-head{
+    display: inline;
+    background: linear-gradient(60deg,green,lightgreen,lightseagreen);
+    -webkit-background-clip: text;
+    color: black;
+    -webkit-text-stroke: 4px transparent;
+    text-align: center;
+  } */
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .hello {
+    display: inline-block;
+    animation: slideIn 2s ease-out forwards; /* Slide from left */
+  }
+  
+  .hello-right {
+    display: inline-block;
+    animation: slideInFromRight 2s ease-out forwards; /* Slide from right */
+  }
+  
+  
+
+  

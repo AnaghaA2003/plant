@@ -1,0 +1,230 @@
+.outdoor{
+    background-image: url('/public/img/bg-31.jpg');
+    background-size: cover;
+  height: 80vh;
+  width: 100vw;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   /* border-radius: 10px; */
+   padding-top: 10px;
+   margin-top: 20px;
+   /* box-shadow: 1px 1px 50px black; */
+
+} 
+/* .bg{ */
+    /* height: 1px;
+    width: 9%; */
+   /* height: fit-content; */
+   /* background-size: cover; */
+/* } */
+.Head{
+    text-align: center;
+     color: rgb(175, 120, 81);
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-weight: bolder;
+     font-size: 80px;
+     padding-top: 150px;
+     opacity: 3px 3px 50px white;
+     font-size: 90px;
+    /* background: url(./img/textBg.webp); */
+    background-image: url('/public/img/textBg.webp');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    
+}
+.paragraph{
+    text-align: center;
+    color: rgb(102, 43, 0);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* font-weight: bolder; */
+    font-size: 50px;
+   /* box-shadow: 1px 1px 50px black; */
+}
+.grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.img{
+    width: 400px;
+    height: 300px;
+    border: 3px groove green;
+    border-radius: 13px;
+    box-shadow: 4px 7px 7px 0px black;
+    cursor: pointer;
+    margin: 10px;
+    transition: 400ms;
+    /* box-sizing: border-box; */
+   
+}
+.img:hover{
+    /* filter: grayscale(1); */
+    transform: scale(1.03);
+    /* border: 3px solid lightcoral;
+    transition: border 0.3s ease; */
+
+
+}
+.icon {
+    position: absolute;
+    top: 70px;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    color: black;
+    /* visibility: hidden; */
+    font-size: 30px;
+    /* opacity: 0; */
+    transition: opacity 0.3s ease;
+}
+.image-card{
+    position: relative;
+    margin: 10px;
+ 
+    
+    
+
+}
+
+.image-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+}
+.image-card:hover .icon{
+  visibility: visible !important;
+}
+
+
+
+
+
+/* From Uiverse.io by gharsh11032000 */ 
+.shop-card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  }
+  
+  .shop-card svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .shop-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+  
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   text-align: center;
+
+  }
+  
+  .shop-card:hover .card__content {
+    transform: rotateX(0deg);
+  }
+  
+  .card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .shop-card:hover svg {
+    scale: 0;
+  }
+  
+  .shop-card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+  }
+  
+
+
+
+  /* From Uiverse.io by xueyuantan */ 
+.bttn-success {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5,
+              -6px -6px 12px #ffffff;
+ }
+ 
+ .bttn-success::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ .bttn-success:hover::before {
+  width: 9em;
+ }
+
+
+
+
+
+ @media screen and (max-width:376px) {
+  .Head{
+    text-align: center;
+     color: rgb(175, 120, 81);
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-weight: bolder;
+     font-size: 20px;
+     padding-top: 54px;
+     opacity: 3px 3px 50px white;
+     font-size: 68px;
+    /* background: url(./img/textBg.webp); */
+    background-image: url('/public/img/textBg.webp');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    
+}
+ }

@@ -1,0 +1,47 @@
+/* Responsive layout for columns */
+.col-one {
+    background-image: url('/public/img/reg.avif');
+    background-size: cover;
+    height: 100%; 
+    padding: 20px;
+}
+
+.register-row {
+    padding-top: 50px;
+    width: 100%; 
+    height: auto; /* Auto height for responsiveness */
+}
+
+.col-two {
+    background-color: rgb(217, 231, 217);
+    padding: 40px;
+    width: 100%; 
+    height: auto;
+    
+}
+
+/* Button responsive styling */
+.btn-dark {
+    width: 100%; 
+    max-width: 200px; /* Limit button width on larger screens */
+    margin: 0 auto;
+    display: block;
+}
+
+/* Text alignment on smaller devices */
+.para {
+    padding-left: 0;
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .col-one, .col-two {
+        width: 100%; 
+        padding: 10px;
+    }
+    .register-row {
+        padding-top: 20px;
+    }
+}

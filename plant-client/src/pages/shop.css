@@ -1,0 +1,496 @@
+.shop-1{
+    background-image: url('/public/img/shopview2.jpg');
+    background-size: cover;
+    height: 50vh;
+    background-attachment: fixed;
+
+}
+.shopCard{
+    /* border: 3px solid black;  */
+    
+    text-align: center;
+    display: grid;
+    /* justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; */
+    gap: 60px;
+
+
+}
+/* .shop-border{
+    margin-left: 50px;
+    margin-right: 50%;
+
+} */
+.imgCard{
+    /* background: url('/public/img/home.png'); */
+    background-size: cover;
+    /* border: 5px solid black; */
+    /* background-color: lightgreen; */
+    background-size: cover;
+    /* border-top-right-radius: 50%; */
+    /* border-bottom-right-radius: 40%;  */
+    /* height: 40vh; */
+    display: grid;
+
+}
+/* .col-imgCard2{
+   background-image: url('/public/img/img3.jpg');
+    position: absolute;
+    background-size: cover;
+    z-index: 10px;
+    height:150px;
+    width: 190px;
+    /* margin: 100px; */
+    /* margin-top: 10%; */
+    /* border-radius: 50px; */
+     /* border-top-right-radius: 50%;
+    border-bottom-right-radius: 40%; */
+    /* border: 15px solid white; */
+
+    
+/* }  */ 
+.imgContainer{
+    background-color: lightcyan;
+}
+
+
+
+
+.card1 {
+    width: 800px !important;
+    height: 200px;
+    background: #243137;
+    position: relative;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    margin: 20px;
+    /* margin-left: 30%; */
+    
+  }
+  
+  #logo-main, #logo-second {
+    height: 100%;
+  }
+  
+  #logo-main {
+    fill: #bd9f67;
+  }
+  
+  #logo-second {
+    padding-bottom: 10px;
+    fill: none;
+    stroke: #bd9f67;
+    stroke-width: 1px;
+  }
+  
+  .border1 {
+    position: absolute;
+    inset: 0px;
+    border: 2px solid #bd9f67;
+    opacity: 0;
+    transform: rotate(10deg);
+    transition: all 0.5s ease-in-out;
+    margin: 10px;
+   
+  }
+  
+  .bottom-text {
+    position: absolute;
+    left: 50%;
+    bottom: 13px;
+    transform: translateX(-50%);
+    font-size: 6px;
+    text-transform: uppercase;
+    padding: 0px 5px 0px 8px;
+    color: #bd9f67;
+    background: #243137;
+    opacity: 0;
+    letter-spacing: 7px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .content {
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .content .logo {
+    height: 35px;
+    position: relative;
+    width: 33px;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+  }
+  
+  .content .logo .logo1 {
+    height: 33px;
+    position: absolute;
+    left: 0;
+    color: pink;
+  }
+  
+  .content .logo .logo2 {
+    height: 33px;
+    position: absolute;
+    left: 33px;
+  }
+  
+  .content .logo .trail {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+  }
+  
+  .content .logo-bottom-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 30px;
+    color: #bd9f67;
+    padding-left: 8px;
+    font-size: 11px;
+    opacity: 0;
+    letter-spacing: none;
+    transition: all 0.5s ease-in-out 0.5s;
+  }
+  
+  .card1:hover {
+    border-radius: 0;
+    transform: scale(1.1);
+  }
+  
+  .card1:hover .logo {
+    width: 134px;
+    animation: opacity 1s ease-in-out;
+  }
+  
+  .card1:hover .border1 {
+    inset: 15px;
+    opacity: 1;
+    transform: rotate(0);
+  }
+  
+  .card1:hover .bottom-text {
+    letter-spacing: 3px;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+  
+  .card1:hover .content .logo-bottom-text {
+    opacity: 1;
+    letter-spacing: 9.5px;
+  }
+  
+  .card1:hover .trail {
+    animation: trail 1s ease-in-out;
+  }
+  
+  @keyframes opacity {
+    0% {
+      border-right: 1px solid transparent;
+    }
+  
+    10% {
+      border-right: 1px solid #bd9f67;
+    }
+  
+    80% {
+      border-right: 1px solid #bd9f67;
+    }
+  
+    100% {
+      border-right: 1px solid transparent;
+    }
+  }
+  
+  @keyframes trail {
+    0% {
+      background: linear-gradient(90deg, rgba(189, 159, 103, 0) 90%, rgb(189, 159, 103) 100%);
+      opacity: 0;
+    }
+  
+    30% {
+      background: linear-gradient(90deg, rgba(189, 159, 103, 0) 70%, rgb(189, 159, 103) 100%);
+      opacity: 1;
+    }
+  
+    70% {
+      background: linear-gradient(90deg, rgba(189, 159, 103, 0) 70%, rgb(189, 159, 103) 100%);
+      opacity: 1;
+    }
+  
+    95% {
+      background: linear-gradient(90deg, rgba(189, 159, 103, 0) 90%, rgb(189, 159, 103) 100%);
+      opacity: 0;
+    }
+  }
+
+
+
+
+  
+
+
+  /* From Uiverse.io by gharsh11032000 */ 
+.card2 {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 20px;
+  }
+  
+  .card2 svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card2:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+  
+  .card__content2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card2:hover .card__content2 {
+    transform: rotateX(0deg);
+  }
+  
+  .card__title2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .card2:hover svg {
+    scale: 0;
+  }
+  
+  .card__description2 {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+  }
+  
+
+
+
+
+
+
+
+  /* From Uiverse.io by OnCloud125252 */ 
+/* Note that you only needs to edit the config to customize the button! */
+
+.plusButton {
+  /* Config start */
+  --plus_sideLength: 2.5rem;
+  --plus_topRightTriangleSideLength: 0.9rem;
+  /* Config end */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  width: var(--plus_sideLength);
+  height: var(--plus_sideLength);
+  background-color: rgb(215, 147, 159);
+  overflow: hidden;
+}
+
+.plusButton::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover {
+  cursor: pointer;
+}
+
+.plusButton:hover::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton:focus-visible::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton>.plusIcon {
+  fill: white;
+  width: calc(var(--plus_sideLength) * 0.7);
+  height: calc(var(--plus_sideLength) * 0.7);
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover>.plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.plusButton:focus-visible>.plusIcon {
+  fill: pink;
+  transform: rotate(180deg);
+}
+.shopHead{
+  text-align: center;
+   font-family: fantasy;
+    font-size: 50px; 
+    color: lightcoral
+}
+.shopImage{
+  display: grid;
+  justify-content: center;
+}
+
+@media screen and (max-width:671px){
+  .shopImage{
+    display: grid;
+    justify-content: center;
+    margin-left: 6%;
+  }
+}
+
+@media screen and (max-width:375px){
+  .shopImage{
+    display: grid;
+    justify-content: center;
+    margin-left: 10%;
+  }
+}
+
+
+
+@media screen and (max-width:576px){
+  .card1 {
+    width: 516px !important;
+    height: 200px;
+    background: #243137;
+    position: relative;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    margin: 20px;
+    /* margin-left: 30%; */
+    
+  }
+}
+@media screen and (max-width:600px){
+  .card1 {
+    width: 516px !important;
+    height: 200px;
+    background: #243137;
+    position: relative;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    margin: 20px;
+    /* margin-left: 30%; */
+    
+  }
+}
+
+@media screen and (max-width:453px){
+  .card1 {
+    width: 453px !important;
+    height: 200px;
+    background: #243137;
+    position: relative;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    margin: 20px;
+    /* margin-left: 30%; */
+    
+  }
+}
+@media screen and (max-width:375px){
+  .card1 {
+    width: 372px !important;
+    height: 200px;
+    background: #243137;
+    position: relative;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    margin: 20px;
+    /* margin-left: 30%; */
+    
+  }
+}
+@media screen and (max-width:206px){
+  .card1 {
+    width: 251px  !important;
+    height: 200px;
+    background: #243137;
+    position: relative;
+    display: grid;
+    place-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    margin: 20px;
+    /* margin-left: 30%; */
+    
+  }
+}
+@media screen and (max-width:206px){
+  .shop-1{
+    background-image: url('/public/img/shopview2.jpg');
+    background-size: cover;
+    height: 100vh;
+    width: 100vh;
+    background-attachment: fixed;
+
+}
+}
+.colShop{
+  width: 100%;
+}

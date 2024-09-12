@@ -1,0 +1,57 @@
+.shop{
+  /* border: 3px solid black; */
+  height: 900px;
+  width: 600px;
+  margin: 50px;
+  margin-left: 490px;
+  background-image: url('/public/img/shop.jpeg');
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px  black;
+}
+.hd{
+  text-align: center;
+  padding-top: 6%;
+}
+.reg{
+  padding-left: 130px;
+  padding-top: 10%;
+  
+ 
+  
+}
+.shopName{
+  width: 300px;
+    height: 30px;
+    padding: 1.6%;
+   
+}
+.pass1{
+  width: 300px;
+  height: 30px;
+  padding: 1.6%;
+}
+.emailAddress{
+  width: 300px;
+  height: 30px;
+  padding: 1.6%;
+}
+.address{
+  width: 300px;
+  height: 30px;
+  padding: 1.6%;
+}
+.phone{
+  width: 300px;
+  height: 30px;
+  padding: 1.6%;
+}
+.buttn{
+  margin-left: 120px;
+}
+.hr{
+  padding-left: 50px;
+}
+.span{
+  color: red;
+}

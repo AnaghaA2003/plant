@@ -1,0 +1,113 @@
+.add{
+    background-image: url('/public/img/img11.jpg');
+    /* background-size: cover; */
+    height: 20vh;
+    /* text-overflow: clip; */
+    /* text-decoration-color: blueviolet; */
+    /* text-underline-offset: 50px; */
+    -ms-text-autospace: inherit;
+
+    
+}
+ .addHead{
+    text-align: center;
+    text-shadow:1px 1p  50px blue;
+    /* border: 3px solid violet; */
+    color: green;
+    font-weight: bolder;
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    /* box-shadow: 12px 12px 12px black; */
+
+ }
+ /* .indoorbtn:hover{
+    
+    display: block;
+    filter: drop-shadow(0 0 10px lightblue);
+    transition: cubic-bezier(1);
+    transform: rotateX('angle');
+ } */
+ .addProduct{
+   /* border: 3px solid black; */
+   background-image: url('/public/img/add2.jpg');
+   background-size: cover;
+   /* background-repeat: no-repeat; */
+   /* background-clip: content-box; */
+   height: 75vh;
+   
+   
+ }
+ .form-product{
+  text-align: center;
+  width: 55%;
+  margin-left: 25%;
+  border-radius: 10px;
+  border:3px solid gray;
+  height: 80%;
+  padding-top: 2%;
+  padding: 2%;
+  box-shadow: 1px 1px 20px  black;
+
+
+ }
+
+
+
+
+ /* From Uiverse.io by KINGFRESS */ 
+.button-btn {
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   color: white;
+   background-color: #171717;
+   /* padding: 1em 2em; */
+   border: none;
+   border-radius: .6rem;
+   position: relative;
+   cursor: pointer;
+   overflow: hidden;
+   height: 30px;
+   width: 20%;
+ }
+ 
+ .button-btn span:not(:nth-child(6)) {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   height: 30px;
+   width: 38px;
+   background-color: #0c66ed;
+   border-radius: 50%;
+   transition: .6s ease;
+ }
+ 
+ .button-btn span:nth-child(6) {
+   position: relative;
+ }
+ 
+ .button-btn span:nth-child(1) {
+   transform: translate(-3.3em, -4em);
+ }
+ 
+ .button-btn span:nth-child(2) {
+   transform: translate(-6em, 1.3em);
+ }
+ 
+ .button-btn span:nth-child(3) {
+   transform: translate(-.2em, 1.8em);
+ }
+ 
+ .button-btn span:nth-child(4) {
+   transform: translate(3.5em, 1.4em);
+ }
+ 
+ .button-btn span:nth-child(5) {
+   transform: translate(3.5em, -3.8em);
+ }
+ 
+ .button-btn:hover span:not(:nth-child(6)) {
+   transform: translate(-50%, -50%) scale(4);
+   transition: 1.5s ease;
+ }
+   

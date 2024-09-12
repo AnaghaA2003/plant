@@ -1,0 +1,50 @@
+.nav1{
+    /* background-image: url(/img/webp.jpg); */
+    background-image: url(/public/img/webp.jpg);
+    background-size: cover;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* display: block;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    width: 100%; */
+    
+}
+.indoor:hover{
+    color: brown;
+}
+.h3{
+    font-size: 90px;
+    /* background: url(./img/textBg.webp); */
+    background-image: url('/public/img/textBg.webp');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+
+@media screen and (max-width:576px) {
+    .nav1{
+        /* background-image: url(/img/webp.jpg); */
+        background-image: url(/public/img/webp.jpg);
+        background-size: cover;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        /* display: block;
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 100%;
+        width: 100%; */
+        
+    }
+    
+}

@@ -1,0 +1,35 @@
+.p1{
+    background-color:lightgray;
+    height: 20px;
+}
+.nav1{
+    background-image: url(/img/webp.jpg);
+    background-size: cover;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* display: block;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    width: 100%; */
+    
+}
+a{
+    color: black;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+h2{
+    font-size: 90px;
+    background: url(./img/textBg.webp);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
