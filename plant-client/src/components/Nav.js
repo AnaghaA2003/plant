@@ -14,10 +14,14 @@ export default function NavBar() {
 
   console.log("LoginRole==>", role);
   const logout=()=>{
-   const val= localStorage.removeItem('role');
-   setRole(val)
+    localStorage.removeItem('loginId');
+    localStorage.removeItem('emailId');
+    localStorage.removeItem('password');
+    localStorage.removeItem('role');
+   
     // console.log(localStorage.getItem('loginId'));
     navigate('/');
+    window.location.reload()//reload chyan vendi ullath
   }
 
   return (
@@ -61,7 +65,7 @@ export default function NavBar() {
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-magnifying-glass"></i> Search</Nav.Link>
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-heart"></i> WishList</Nav.Link>
-                <Button variant="secondary" ><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</Button>
+                <Button variant="secondary" onClick={logout} ><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</Button>
               </div>
             </>
           ) : role === 'admin' ? (
@@ -80,7 +84,7 @@ export default function NavBar() {
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-magnifying-glass"></i> Search</Nav.Link>
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-heart"></i> WishList</Nav.Link>
-                <Button variant="secondary" ><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</Button>
+                <Button variant="secondary" onClick={logout} ><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</Button>
               </div>
             </>
           ) : (

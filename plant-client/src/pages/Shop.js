@@ -126,7 +126,7 @@ export default function Shop() {
                                                     <b>{value.Address}</b><br />
                                                     <b>{value.Mobile}</b><br />
                                                 </p><br />
-                                                <div style={{ display: "flex", justifyContent: "space-evenly", borderRadius: "15px" }}>
+                                                {/* <div style={{ display: "flex", justifyContent: "space-evenly", borderRadius: "15px" }}>
 
                                                     <button type="button" className="btn bttn-success" style={{ borderRadius: "15px", width: "160px" }} onClick={() => {
                                                         shopEdit(value.loginId._id);
@@ -134,11 +134,28 @@ export default function Shop() {
                                                     <button type="submit" className="btn bttn-success" style={{ borderRadius: "15px", width: "160px" }} onClick={() => {
                                                         shopDelete(value._id);
                                                     }}>Delete</button>
-                                                </div>
+                                                </div> */}
                                             </div>
 
                                         </Col>
                                     </Row>
+                                    <>
+                                        <div
+                                            tabIndex={0}
+                                            className="plusButton"
+                                            onClick={() => shopMore(value._id)}
+                                        >
+                                            <svg
+                                                className="plusIcon"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 30 30"
+                                            >
+                                                <g>
+                                                    <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </>
                                 </Container>
                             </div>
                         </div>
@@ -183,6 +200,23 @@ export default function Shop() {
                                             </div>
                                         </Col>
                                     </Row>
+                                    <>
+                                        <div
+                                            tabIndex={0}
+                                            className="plusButton"
+                                            onClick={() => shopMore(value._id)}
+                                        >
+                                            <svg
+                                                className="plusIcon"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 30 30"
+                                            >
+                                                <g>
+                                                    <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </>
                                 </Container>
                             </div>
                         </div>

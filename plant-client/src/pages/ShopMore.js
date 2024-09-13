@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './shopMore.css'
 import NavBar from '../components/Nav'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
 export default function ShopMore() {
+  const [more,setMore]=useState([])
+  const {id}=useParams()
+  console.log("id==>",id);
+  useEffect(()=>{
+    try {
+      axios.get(`http://localhost:5000/api/shop/shopAdd-productView/${id}`).then((res)=>{
+        console.log("res==>",res.data.data);
+        setMore(res.data.data)
+        
+      })
+    } catch (error) {
+      console.log(error);
+      
+    }
+  },[id])
+  
   return (
     <div>
     <meta charSet="UTF-8" />

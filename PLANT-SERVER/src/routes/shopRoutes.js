@@ -2,28 +2,29 @@ const express = require('express')
 const shopSchema = require('../models/shopSchema')
 
 
-const cloudinary = require("cloudinary").v2
-const { CloudinaryStorage } = require("multer-storage-cloudinary")
-const multer = require("multer")
+const cloudinary=require("cloudinary").v2
+const {CloudinaryStorage}=require("multer-storage-cloudinary")
+const multer=require("multer")
 const productSchema = require('../models/productSchema')
 require('dotenv').config();
 
 
 cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME,
-    api_key: process.env.API_KEY,
-    api_secret: process.env.API_SECRET
+    cloud_name:process.env.CLOUD_NAME,
+    api_key:process.env.API_KEY,
+    api_secret:process.env.API_SECRET
 
 })
 
-const CloudStorage = new CloudinaryStorage({
-    cloudinary: cloudinary,
-    params: {
-        folder: "plant"
+const CloudStorage=new CloudinaryStorage({
+    cloudinary:cloudinary,
+    params:{
+        folder:"plant"
     }
 })
 
-const upload = multer({ storage: CloudStorage })
+const upload=multer({storage:CloudStorage})
+
 
 
 
@@ -93,6 +94,8 @@ shopRoutes.post('/profile-edit/:id', upload.single("shop_img"), async (req, res)
     try {
         const id = req.params.id
         const oldData = await shopSchema.findOne({ _id: id })
+        console.log("oldDta==>",oldData);
+        
         const data = {
             shopName: req.body.shopName ? req.body.shopName : oldData.shopName,
             Address: req.body.Address ? req.body.Address : oldData.Address,
@@ -100,6 +103,8 @@ shopRoutes.post('/profile-edit/:id', upload.single("shop_img"), async (req, res)
             shop_img: req.file ? req.file.path : oldData.shop_img,
 
         }
+        console.log("data==>",data);
+        
         const newData = await shopSchema.updateOne({ _id: id }, { $set: data })
         if (newData.modifiedCount == 1) {
             return res.status(200).json({
