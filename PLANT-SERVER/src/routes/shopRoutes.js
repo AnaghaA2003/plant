@@ -139,9 +139,11 @@ shopRoutes.post('/profile-edit/:id', upload.single("shop_img"), async (req, res)
 shopRoutes.get('/single-shopView/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const viewData = await shopSchema.findOne({ _id: id }).populate('loginId')
+        console.log("id==>",id);
+        
+        const viewData = await shopSchema.findOne({ loginId: id }).populate('loginId')
 
-        console.log(viewData);
+        console.log("viewData==>",viewData);
 
         if (viewData) {
             return res.status(200).json({
@@ -150,6 +152,8 @@ shopRoutes.get('/single-shopView/:id', async (req, res) => {
                 message: "Data viwed successfully",
                 data: viewData
             })
+            
+            
         } else {
             return res.status(400).json({
                 success: true,

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './login.css'
 import axios from 'axios';
-import toast,{Toaster} from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
@@ -13,17 +14,17 @@ export default function Login() {
 
 
     const [error, setError] = useState({})
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     console.log(error);
 
     const inputChange = (event) => {
         const name = event.target.name
         const value = event.target.value
-        setInput({ ...input, [name]: value }) 
+        setInput({ ...input, [name]: value })
 
     }
- 
+
 
     const submit = (event) => {
         event.preventDefault()
@@ -37,10 +38,10 @@ export default function Login() {
         axios.post('http://localhost:5000/api/auth/login-check', input).then((res) => {
             console.log(res.data);
             toast.success(res.data.message)
-            localStorage.setItem('loginId',JSON.stringify(res.data.data._id))
-            localStorage.setItem('emailId',JSON.stringify(res.data.data.email))
-            localStorage.setItem('password',JSON.stringify(res.data.data.password)) 
-            localStorage.setItem('role',JSON.stringify(res.data.data.role)) 
+            localStorage.setItem('loginId', JSON.stringify(res.data.data._id))
+            localStorage.setItem('emailId', JSON.stringify(res.data.data.email))
+            localStorage.setItem('password', JSON.stringify(res.data.data.password))
+            localStorage.setItem('role', JSON.stringify(res.data.data.role))
 
             navigate('/')
         }).catch((error) => {
@@ -74,8 +75,8 @@ export default function Login() {
                 integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
                 crossOrigin="anonymous"
             />
-            <Toaster/>
-            
+            <Toaster />
+
             <div className='border'>
                 <div className="form login-form">
                     <h1 style={{ color: "white" }}>Login In</h1>
@@ -84,15 +85,28 @@ export default function Login() {
                     <input type="text" className="input" placeholder="Enter your email" name='email' onChange={inputChange} />
                     <div className='span'><span>{error.password}</span></div>
 
-                    <input type="password" className="input" placeholder="*********" name='password' onChange={inputChange} />
-                    <button className='login-butn' onClick={submit}>Submit</button>
-                    <div className="foot-lnk">
-                        <a href="#forgot" className='forget'>Forgot Password?</a>
+                    <input type="password" className="input" placeholder="*********" name='password' onChange={inputChange} /><br />
+                    <button className='login-butn' onClick={submit}>Submit</button><br></br>
+                    <div className="foot-lnk" style={{ display: "flex", justifyContent: "space-around" }}>
+                        <div><a href="#forgot" className='forget'>Forgot Password?</a></div>
+                        <div style={{ display: "grid" }}> Don't have an account yet?
+                            <Link to="/userRegistration" className='forget' >
+                                Create User Account
+                            </Link>
+                            <Link to="/shopRegistration"  className='forget'>
+                                Create Shop Account
+                            </Link>
+                        </div>
+
+                        {/* <div className="foot-lnk">
+                       
+                    </div> */}
                     </div>
+
+
+
                 </div>
-
             </div>
-
         </div>
 
     )

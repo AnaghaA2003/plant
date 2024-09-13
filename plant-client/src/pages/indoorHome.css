@@ -17,15 +17,6 @@
 .indoor:hover{
     color: brown;
 }
-.h3{
-    font-size: 90px;
-    /* background: url(./img/textBg.webp); */
-    background-image: url('/public/img/textBg.webp');
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
 
 
 

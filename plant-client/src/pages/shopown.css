@@ -1,0 +1,25 @@
+.profile{
+    font-size: 50px;
+    /* background-image: url('/public/img/textBg.webp'); */
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* color: transparent; */
+    text-align: center;
+}
+.profilecol{
+    background-color: lightcoral;
+    text-align: center;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: wheat;
+    height: 40%;
+    
+    
+}
+.profilecol2{
+    background-color: wheat;
+    height: 40%;
+
+   
+}

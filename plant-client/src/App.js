@@ -14,6 +14,7 @@ import ShopEdit from './pages/ShopEdit';
 import UserProfile from './pages/UserProfile';
 import ShopMore from './pages/ShopMore';
 import OwnProductsView from './pages/OwnProductsView';
+import ShopOwnProfileView from './pages/ShopOwnProfileView';
 function App() {
   return (
    <BrowserRouter>
@@ -32,6 +33,7 @@ function App() {
     <Route path='/userProfile' element={<UserProfile/>}/>
     <Route path='/shopMore/:id' element={<ShopMore/>}/>
     <Route path='/ownProduct' element={<OwnProductsView/>}/>
+    <Route path='/shopownProfile' element={<ShopOwnProfileView/>}/>
    </Routes>
    </BrowserRouter>
   );

@@ -1,5 +1,9 @@
 const mongoose=require('mongoose')
 const productSchema=new mongoose.Schema({
+    shop_login_id:{
+        type:mongoose.Types.ObjectId,
+        ref:'login'
+    },
     productName:{
         type:String,
         required:true
@@ -27,10 +31,6 @@ const productSchema=new mongoose.Schema({
     product_img:{
         type:String,
     },
-    shop_login_id:{
-        type:mongoose.Types.ObjectId,
-        ref:'login'
-    }
 
 })
 

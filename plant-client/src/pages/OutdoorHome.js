@@ -230,7 +230,7 @@ export default function OutdoorHome() {
       <br></br><br></br>
 
 
-      {/* <h2><i>INDOOR PLANTS</i></h2> */}
+      
       <CareTips />
     </div>
   )

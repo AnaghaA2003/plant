@@ -40,7 +40,7 @@ export default function ShopLogin() {
     data.append('shop_img', input.shop_img)
     axios.post('http://localhost:5000/api/auth/shop-registration', data).then((res) => {
       console.log(res.data.message);
-      toast(res.data.message)
+      toast.success(res.data.message)
 
     }).catch((error) => {
       console.log(error);
@@ -114,7 +114,7 @@ export default function ShopLogin() {
           <input type='text' name='Mobile' placeholder='Phone Number' className='phone' onChange={inputChange} /><br /><br />
           <button className='buttn' onClick={submit}>Submit</button><br /><br />
           <div className='hr'>
-            <b> Alreday have an account?<a href='#'>Sign In</a></b>
+            <b> Alreday have an account?<a href='/login'>Sign In</a></b>
           </div>
 
         </div>
