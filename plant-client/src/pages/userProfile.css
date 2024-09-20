@@ -1,5 +1,5 @@
 /* From Uiverse.io by Pradeepsaranbishnoi */ 
-.wallet {
+.wallet1 {
   --bg-color: #ceb2fc;
   --bg-color-light: #f0e7ff;
   --text-color-hover: #fff;
@@ -108,7 +108,7 @@ z-index: 1001;
   position: absolute; /* Allows the image to be positioned inside the circle */
   top: 30%; /* Centers the image vertically */
   left: 50%; /* Centers the image horizontally */
-  width: 90%; /* Fills the width of the circle */
+  width: 69%; /* Fills the width of the circle */
   height: auto; /* Maintains aspect ratio */
   transform: translate(-50%, -50%); /* Centers the image */
   border-radius: 50%; /* Makes the image circular */

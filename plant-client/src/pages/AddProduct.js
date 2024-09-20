@@ -3,6 +3,7 @@ import Nav from '../components/Nav'
 import './add.css'
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import Footer from '../components/Footer';
 
 export default function AddProduct() {
     const [input, setInput] = useState({
@@ -148,6 +149,7 @@ export default function AddProduct() {
                     </button>
                 </form>
             </div>
+            <Footer/>
         </div>
     )
 }

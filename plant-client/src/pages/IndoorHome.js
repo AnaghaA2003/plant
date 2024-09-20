@@ -5,6 +5,7 @@ import CareTips from '../components/CareTips'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import toast,{Toaster} from 'react-hot-toast'
+import Footer from '../components/Footer'
 
 export default function IndoorHome() {
   const [role, setRole] = useState('');
@@ -223,6 +224,8 @@ export default function IndoorHome() {
 
       {/* <h2><i>INDOOR PLANTS</i></h2> */}
       <CareTips/>
+      <br></br>
+      <Footer/>
       
     </div>
   )

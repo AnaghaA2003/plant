@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ShopMore from './ShopMore';
+import Footer from '../components/Footer';
 
 export default function Shop() {
 
@@ -364,6 +365,8 @@ export default function Shop() {
                 </div>
                 ))}
             </div>
+            <br></br>
+            <Footer/>
         </div>
     )
 }

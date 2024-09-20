@@ -8,6 +8,7 @@ const userRoutes = require('./src/routes/userRoutes');
 const productRoutes = require('./src/routes/productRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
+const cartRoutes = require('./src/routes/cartRoutes');
 
 require('dotenv').config();//contents of .env
 mongoose.connect(process.env.MONGO_URL).then(()=>{
@@ -24,6 +25,7 @@ app.use('/api/user',userRoutes)
 app.use('/api/product',productRoutes)
 app.use('/api/shop',shopRoutes)
 app.use('/api/admin',adminRoutes)
+app.use('/api/cart',cartRoutes)
 
 app.get('/',(req,res)=>{
     return res.send('Welcome')

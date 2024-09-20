@@ -3,6 +3,7 @@ import './shopMore.css'
 import NavBar from '../components/Nav'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import Footer from '../components/Footer'
 
 export default function ShopMore() {
   const [more, setMore] = useState([])
@@ -174,6 +175,8 @@ export default function ShopMore() {
               </div> */}
 
       </div>
+      <br></br>
+      <Footer/>
     </div>
   )
 }

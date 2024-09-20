@@ -6,6 +6,7 @@ import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import { useNavigate } from 'react-router-dom';
 import OutdoorBenefits from '../components/OutdoorBenefits';
+import Footer from '../components/Footer';
 
 
 export default function Home() {
@@ -155,8 +156,8 @@ export default function Home() {
             See More</button>
 
         </div>
-      </div>
-
+      </div><br></br>
+<Footer/>
     </div>
   )
 }

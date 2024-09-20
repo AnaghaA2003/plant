@@ -5,8 +5,11 @@ import Col from 'react-bootstrap/Col';
 import NavBar from '../components/Nav';
 import './shopown.css'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 export default function ShopOwnProfileView() {
+    const navigate=useNavigate()
     const [shopProfile, setshopProfile] = useState({})
     useEffect(() => {
         const id = JSON.parse(localStorage.getItem('loginId'));
@@ -21,6 +24,12 @@ export default function ShopOwnProfileView() {
 
         })
     }, [])
+    const shopEdit=(shop_Id)=>{
+        console.log("shopId==>",shop_Id);
+        
+        navigate(`/shopEdit/${shop_Id}`)
+    }
+
     return (
         <div>
             <meta charSet="UTF-8" />
@@ -41,18 +50,23 @@ export default function ShopOwnProfileView() {
 
             <Container>
                 <Row>
-                    <Col className='profilecol2'><img className='shopimg2' src={shopProfile.shop_img} height={'100%'} width={"200%"} ></img></Col>
-                    <Col className='profilecol'>
-                        <h1>{shopProfile.shopName}</h1>
-                        <p>{shopProfile.Mobile}</p>
-                        <p>{shopProfile.Address}</p>
-                        <p>{shopProfile.email}</p>
-
+                    <Col className='profilecol2'><img className='shopimg2' src={shopProfile.shop_img}  ></img>
+                        {/* <Col className='profilecol'> */}
+                        <div className='detailsShop'>
+                            <h1>{shopProfile.shopName}</h1>
+                            <p>{shopProfile.Mobile}</p>
+                            <p>{shopProfile.Address}</p>
+                            <p>{shopProfile.email}</p>
+                            <button className='shopEditbtn' onClick={() => {
+                                                        shopEdit(shopProfile.loginId._id)}}> Edit
+                            </button>
+                        </div>
                     </Col>
                 </Row>
             </Container>
 
-
+<br></br>
+<Footer/>
         </div>
     )
 }

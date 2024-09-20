@@ -1,6 +1,7 @@
 const mongoose=require('mongoose')
 const productSchema=new mongoose.Schema({
     shop_login_id:{
+        // foreign key 
         type:mongoose.Types.ObjectId,
         ref:'login'
     },

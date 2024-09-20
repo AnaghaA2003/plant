@@ -93,7 +93,10 @@ shopRoutes.post('/profile-delete/:id', async (req, res) => {
 shopRoutes.post('/profile-edit/:id', upload.single("shop_img"), async (req, res) => {
     try {
         const id = req.params.id
-        const oldData = await shopSchema.findOne({ _id: id })
+        console.log("id==>",id);
+        
+        const oldData = await shopSchema.findOne({ loginId: id })
+        
         console.log("oldDta==>",oldData);
         
         const data = {
@@ -105,7 +108,7 @@ shopRoutes.post('/profile-edit/:id', upload.single("shop_img"), async (req, res)
         }
         console.log("data==>",data);
         
-        const newData = await shopSchema.updateOne({ _id: id }, { $set: data })
+        const newData = await shopSchema.updateOne({ loginId: id }, { $set: data })
         if (newData.modifiedCount == 1) {
             return res.status(200).json({
                 success: true,

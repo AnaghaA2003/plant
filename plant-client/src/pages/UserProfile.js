@@ -3,6 +3,7 @@ import './userProfile.css'
 import axios from 'axios'
 import Nav from '../components/Nav'
 import toast, { Toaster } from 'react-hot-toast'
+import Footer from '../components/Footer'
 
 
 export default function UserProfile() {
@@ -76,7 +77,7 @@ export default function UserProfile() {
       <h1 style={{textAlign:"center"}}>USERS</h1>
       <div className='user-card'>
         {user.map((value, index) => (
-          <div className="user-card1 wallet" key={index}>
+          <div className="user-card1 wallet1" key={index}>
             <img src={value.user_img} alt='User Profile' className='profile-image' />
             <div>
               <div className='details' style={{ paddingTop: "190px", textAlign: "center" }}>
@@ -111,7 +112,8 @@ export default function UserProfile() {
             <div className="overlay"></div>
           </div>
         ))}
-      </div>
+      </div><br></br>
+      <Footer/>
     </>
   )
 }

@@ -4,6 +4,7 @@ import './ownProducts.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import toast,{Toaster} from 'react-hot-toast'
+import Footer from '../components/Footer'
 export default function OwnProductsView() {
 
   const [view , setView] =useState([])
@@ -165,6 +166,8 @@ export default function OwnProductsView() {
       
 
     </div>
+    <br></br>
+    <Footer/>
     </div>
   )
 }

@@ -45,7 +45,7 @@ export default function NavBar() {
               </Nav>
               <div className="d-flex gap-2">
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-magnifying-glass"></i> Search</Nav.Link>
-                <Nav.Link href="#" className="text-success"><i className="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
+                <Nav.Link href="/cart" className="text-success"><i className="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-heart"></i> WishList</Nav.Link>
                 <Button variant="secondary" onClick={logout} ><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</Button>
               </div>
@@ -60,11 +60,12 @@ export default function NavBar() {
                 </NavDropdown>
                 <Nav.Link href="/add" style={{ color: "rgb(51, 153, 11)" }}>Add Product</Nav.Link>
                 <Nav.Link href="/ownProduct" style={{ color: "rgb(51, 153, 11)" }}>View Products</Nav.Link>
+                <Nav.Link href="/shopownProfile" style={{ color: "rgb(51, 153, 11)" }}>Profile</Nav.Link>
               </Nav>
               <div className="d-flex gap-2">
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-magnifying-glass"></i> Search</Nav.Link>
-                <Nav.Link href="#" className="text-success"><i className="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
-                <Nav.Link href="#" className="text-success"><i className="fa-solid fa-heart"></i> WishList</Nav.Link>
+                {/* <Nav.Link href="#" className="text-success"><i className="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
+                <Nav.Link href="#" className="text-success"><i className="fa-solid fa-heart"></i> WishList</Nav.Link> */}
                 <Button variant="secondary" onClick={logout} ><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</Button>
               </div>
             </>
@@ -82,8 +83,8 @@ export default function NavBar() {
               </Nav>
               <div className="d-flex gap-2">
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-magnifying-glass"></i> Search</Nav.Link>
-                <Nav.Link href="#" className="text-success"><i className="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
-                <Nav.Link href="#" className="text-success"><i className="fa-solid fa-heart"></i> WishList</Nav.Link>
+                {/* <Nav.Link href="#" className="text-success"><i className="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
+                <Nav.Link href="#" className="text-success"><i className="fa-solid fa-heart"></i> WishList</Nav.Link> */}
                 <Button variant="secondary" onClick={logout} ><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</Button>
               </div>
             </>

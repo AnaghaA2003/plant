@@ -6,6 +6,7 @@ import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import CareTips from '../components/CareTips'
+import Footer from '../components/Footer'
 
 
 export default function OutdoorHome() {
@@ -231,7 +232,8 @@ export default function OutdoorHome() {
 
 
       
-      <CareTips />
+      <CareTips /><br></br>
+      <Footer/>
     </div>
   )
 }

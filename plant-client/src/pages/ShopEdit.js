@@ -56,7 +56,7 @@ export default function ShopEdit() {
       .then((res) => {
         toast.success(res.data.message);
         setTimeout(() => {
-          navigate('/shop');
+          navigate('/');
         }, 4000);
       })
       .catch((error) => {
