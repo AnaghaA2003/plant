@@ -21,13 +21,13 @@ cartRoutes.post('/add_to_cart', async (req, res) => {
         })
         console.log("oldData==>", oldData);
 
-        if (oldData) {
+        if (oldData.status==='In Cart') {
             const updateData = await cartSchema.updateOne({ _id: oldData._id }, { $set: { quantity: oldData.quantity + 1 } })
             if (updateData) {
                 return res.status(200).json({
                     success: true,
                     error: false,
-                    message: "Quantity increment successfully"
+                    message: "Quantity incremented successfully"
                 })
             }
         } else {
@@ -78,7 +78,7 @@ cartRoutes.get('/view_cart/:id', async (req, res) => {
                     'localField': 'user_loginId',
                     'foreignField': 'loginId',
                     'as': 'user'
-                }
+                }//databasel aggregate chytha code evide kond eda
             }, {
                 '$lookup': {
                     'from': 'products',
@@ -94,9 +94,14 @@ cartRoutes.get('/view_cart/:id', async (req, res) => {
             },
             {
                 '$match':{
-                    'user_loginId':id
+                    'user_loginId': new mongoose.Types.ObjectId(id)//match chyan vendi use chyaa match chyan onnum illengil direct group chyam
                 }
             },
+            // {
+            //     '$match':{
+            //         'status': 'In Cart'
+            //     }
+            // },
             {
                 '$group': {
                     '_id': '$_id',
@@ -108,6 +113,7 @@ cartRoutes.get('/view_cart/:id', async (req, res) => {
                     'price': { '$first': '$product.price' },
                     'product_img': { '$first': '$product.product_img' },
                     'category': { '$first': '$product.category' },
+                    'user_loginId': { '$first': '$user.loginId' },
 
                     //venda field mathram group chyan vendii
 
@@ -242,6 +248,41 @@ cartRoutes.post('/quantity-decrement/:id', async (req, res) => {
         })
 
 
+    }
+})
+
+
+
+//cart update
+
+cartRoutes.post('/status-update/:id',async(req,res)=>{
+    try {
+        const id=req.params.id
+       
+        const updateData = await cartSchema.updateMany({  user_loginId: id }, { $set: {'status':'order placed'} })
+        console.log("updatedata==>",updateData);
+        
+        if (updateData.modifiedCount>0) {
+            return res.status(200).json({
+                success: true,
+                error: false,
+                message: "Order placed successfully"
+            })
+        } else {
+            return res.status(400).json({
+                success: true,
+                error: false,
+                message: "Data cannot updated ",
+
+            })
+        }
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            error: true,
+            message: "Internal server error",
+            errorMessage: error
+        })
     }
 })
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, NavDropdown, Button, Container } from 'react-bootstrap';
 import './Nav.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function NavBar() {
   const [role, setRole] = useState('');
@@ -11,6 +12,7 @@ export default function NavBar() {
     const loginRole = JSON.parse(localStorage.getItem('role'));
     setRole(loginRole);
   }, []);
+ 
 
   console.log("LoginRole==>", role);
   const logout=()=>{
@@ -42,6 +44,7 @@ export default function NavBar() {
                 </NavDropdown>
                 <Nav.Link href="/shop" style={{ color: "rgb(51, 153, 11)" }}>Shops</Nav.Link>
                 <Nav.Link href="/allProducts" style={{ color: "rgb(51, 153, 11)" }}>All Products</Nav.Link>
+                <Nav.Link href="/myOrder" style={{ color: "rgb(51, 153, 11)" }}>My Orders</Nav.Link>
               </Nav>
               <div className="d-flex gap-2">
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-magnifying-glass"></i> Search</Nav.Link>

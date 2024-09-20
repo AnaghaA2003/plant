@@ -8,6 +8,23 @@ import toast,{Toaster} from 'react-hot-toast'
 import Footer from '../components/Footer'
 
 export default function IndoorHome() {
+  const cartProduct=(id)=>{
+    const data={
+      user_login_id:JSON.parse(localStorage.getItem('loginId')),
+      product_Id:id
+    }
+    axios.post(`http://localhost:5000/api/cart/add_to_cart/`,data).then((res)=>{
+      console.log(res.data.message);
+      toast.success(res.data.message)
+
+      
+    }).catch((error) => {
+      console.log(error);
+      // toast.error()
+
+
+    })
+  }
   const [role, setRole] = useState('');
 
   useEffect(() => {
@@ -117,7 +134,9 @@ export default function IndoorHome() {
                 </p><br></br>
                 <div className='icon'>
                   <i className="fa-regular fa-heart" />
-                  <i class="fa-solid fa-cart-shopping"></i>
+                  <i class="fa-solid fa-cart-shopping" onClick={()=>{
+                        cartProduct(value._id)
+                      }}></i>
   
                 </div>
                 <br></br><br></br><br></br>

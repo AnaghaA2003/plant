@@ -16,8 +16,7 @@ export default function Cart() {
   const [ViewCart, setViewCart] = useState([])
   useEffect(() => {
     const logid=JSON.parse(localStorage.getItem('loginId'))
-    setViewCart(logid)
-    console.log("logid==>",logid);
+ 
     
     axios.get(`http://localhost:5000/api/cart/view_cart/${logid}`).then((res) => {
       console.log(res.data.data);
@@ -72,6 +71,18 @@ export default function Cart() {
 
     })
   }
+  const checkOut=()=>{
+    const _id=JSON.parse(localStorage.getItem('loginId'))
+    axios.post(`http://localhost:5000/api/cart/status-update/${_id}`,ViewCart).then((res)=>{
+      console.log(res.data.message);
+      const dataFilter=ViewCart.filter((value)=>{
+        return value.user_loginId!=_id
+      })
+      setViewCart(dataFilter)
+      toast.success(res.data.message)
+      
+    })
+  }
 
   return (
     <div>
@@ -107,13 +118,13 @@ export default function Cart() {
       <h3 style={{ textAlign: "center", fontFamily: "cursive" }}><b>Shopping Cart</b></h3>
       <br></br>
       <div style={{ display: "grid", gap: "40px" }}>
-        {ViewCart.map((value, index) => (
+        {ViewCart.filter((data)=>{return data.status==='In Cart'}).map((value, index) => (
           <div className="cards">
             <div className="card red">
               <div >
                 <Container>
                   <Row>
-                    <Col ><b><u>Product</u></b><br></br><br></br><img src={value.product_img} height={'150px'} ></img><b>{value.productName}</b></Col>
+                    <Col ><b><u>Product</u></b><br></br><br></br><img src={value.product_img} height={'150px'} ></img><b>Product Name:{value.productName}</b></Col>
                     <Col><b><u>Price</u></b> <br></br><br></br>{value.price}</Col>
                     <Col><b><u>category</u></b> <br></br><br></br>{value.category} </Col>
                     {/* <Col><b>status</b> <br></br><br></br>3 of 3 sdfguhi </Col> */}
@@ -155,7 +166,7 @@ export default function Cart() {
             <p class="text-body"><b>Discount:</b><b>Rs.{discount}</b></p>
             <p class="text-body"><b>Cart Total:</b><b>Rs.{cartTotal}</b></p>
           </div>
-          <button class="cart-button">CheckOut</button>
+          <button class="cart-button" onClick={checkOut} >CheckOut</button>
         </div>
     </div>
   )
