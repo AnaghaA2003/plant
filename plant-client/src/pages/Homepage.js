@@ -58,7 +58,7 @@ export default function Home() {
           </div>
           <div className='slider-section'>
             <div className='s-content'>
-              <h1 className='hello' style={{color:"violet"}}><b>Turning Over a <br></br>new leaf </b> </h1>
+              <h1 className='hello' style={{color:"gainsboro"}}><b>Turning Over a <br></br>new leaf </b> </h1>
             </div>
             <div className='s-content2'>
               <h1 className='' >Plants are the best therapy. They require attention, patience, and nurture, and in return, they provide beauty and tranquility.</h1>
@@ -68,7 +68,7 @@ export default function Home() {
             
             <div className='slider-section'>
             <div className='s-content'>
-              <h1 className='hello' style={{color:"white"}}><b>Love is the flower <br></br>you’ve got to let grow </b> </h1>
+              <h1 className='hello' style={{color:"bisque",fontFamily:"cursive"}}><b>Love is the flower <br></br>you’ve got to let grow </b> </h1>
             </div>
             <div className='s-content2'>
               <h1 className='' >A garden is a way of showing that you believe in tomorrow</h1>
@@ -138,6 +138,7 @@ export default function Home() {
           <div class="col " >
             <img src='/img/outdoor home.jpg' width={"90%"} height={"88%"}  className='col-img' ></img>
           </div>
+          
 
 
 

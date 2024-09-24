@@ -21,8 +21,10 @@ cartRoutes.post('/add_to_cart', async (req, res) => {
         })
         console.log("oldData==>", oldData);
 
-        if (oldData.status==='In Cart') {
+        if (oldData?.status==='In Cart') {
             const updateData = await cartSchema.updateOne({ _id: oldData._id }, { $set: { quantity: oldData.quantity + 1 } })
+            console.log("updateData==>",updateData);
+            
             if (updateData) {
                 return res.status(200).json({
                     success: true,

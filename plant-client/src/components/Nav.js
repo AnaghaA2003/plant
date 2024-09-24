@@ -49,7 +49,7 @@ export default function NavBar() {
               <div className="d-flex gap-2">
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-magnifying-glass"></i> Search</Nav.Link>
                 <Nav.Link href="/cart" className="text-success"><i className="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
-                <Nav.Link href="#" className="text-success"><i className="fa-solid fa-heart"></i> WishList</Nav.Link>
+                <Nav.Link href="/wishlist" className="text-success"><i className="fa-solid fa-heart"></i> WishList</Nav.Link>
                 <Button variant="secondary" onClick={logout} ><i className="fa-solid fa-arrow-right-from-bracket"></i> LogOut</Button>
               </div>
             </>

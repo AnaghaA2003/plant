@@ -18,6 +18,7 @@ import ShopOwnProfileView from './pages/ShopOwnProfileView';
 import Cart from './pages/Cart';
 import Footer from './components/Footer';
 import MyOrderProducts from './pages/MyOrderProducts';
+import WishList from './pages/WishList';
 function App() {
   return (
    <BrowserRouter>
@@ -40,6 +41,7 @@ function App() {
     <Route path='/cart' element={<Cart/>}/>
     <Route path='/footer' element={<Footer/>}/>
     <Route path='/myOrder' element={<MyOrderProducts/>}/>
+    <Route path='/wishlist' element={<WishList/>}/>
    </Routes>
    </BrowserRouter>
   );

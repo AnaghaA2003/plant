@@ -25,7 +25,9 @@ export default function Cart() {
     })
   }, [])
   useEffect(() => {
-    const subTotalCalc = ViewCart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    console.log('ViewCart==>',ViewCart);
+    
+    const subTotalCalc = ViewCart.filter((data)=>{return data.status==='In Cart'}).reduce((acc, item) => acc + item.price * item.quantity, 0);
     const discountCalc = subTotalCalc > 1000 ? 100 : 50; // Example: If subtotal > 1000, discount is 100, else 50
     const totalCalc = subTotalCalc - discountCalc;
 

@@ -98,3 +98,71 @@
   
 
   
+  @media (max-width: 480px) {
+    /* Styles for mobile devices */
+    .s-content2{
+      position: absolute;
+      top: 298px;
+      left: 19px;
+      /* color: aliceblue; */
+      /* color:rgb(125, 119, 153) */
+      color: white;
+      font-family: serif;
+  
+      /* text-shadow: 12px 12px 12px  white; */
+    }
+    .hello {
+      display: inline-block;
+      font-size: 42px;
+      margin-left: -162px;
+      animation: slideIn 2s ease-out forwards; /* Slide from left */
+    }
+    
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+    /* Styles for tablets */
+    .s-content2{
+      position: absolute;
+      top: 298px;
+      left: 19px;
+      /* color: aliceblue; */
+      /* color:rgb(125, 119, 153) */
+      color: white;
+      font-family: serif;
+  
+      /* text-shadow: 12px 12px 12px  white; */
+    }
+    .hello {
+      display: inline-block;
+      font-size: 42px;
+      margin-left: -162px;
+      animation: slideIn 2s ease-out forwards; /* Slide from left */
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for small laptops */
+    .s-content2{
+      position: absolute;
+      top: 298px;
+      left: 19px;
+      /* color: aliceblue; */
+      /* color:rgb(125, 119, 153) */
+      color: white;
+      font-family: serif;
+  
+      /* text-shadow: 12px 12px 12px  white; */
+    }
+    .hello {
+      display: inline-block;
+      font-size: 42px;
+      margin-left: -162px;
+      animation: slideIn 2s ease-out forwards; /* Slide from left */
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    /* Styles for desktops */
+  }
+  

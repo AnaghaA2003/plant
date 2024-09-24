@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import Nav from '../components/Nav';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { json, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import './allProduct.css'
+import Footer from '../components/Footer';
+
 
 export default function AllProduct() {
 
   const [role, setRole] = useState('');
-  const cartProduct=(id)=>{
-    const data={
-      user_login_id:JSON.parse(localStorage.getItem('loginId')),
-      product_Id:id
+  const cartProduct = (id) => {
+    const data = {
+      user_login_id: JSON.parse(localStorage.getItem('loginId')),
+      product_Id: id
     }
-    axios.post(`http://localhost:5000/api/cart/add_to_cart/`,data).then((res)=>{
+    axios.post(`http://localhost:5000/api/cart/add_to_cart/`, data).then((res) => {
       console.log(res.data.message);
       toast.success(res.data.message)
 
-      
+
     }).catch((error) => {
       console.log(error);
       // toast.error()
@@ -26,12 +28,44 @@ export default function AllProduct() {
     })
   }
 
+  const [checkwishlist, setCheckWishlist] = useState(false)
+  const [wishlist, setWishlist] = useState([])
+  console.log(wishlist);
+
   useEffect(() => {
-      const loginRole = JSON.parse(localStorage.getItem('role'));
-      setRole(loginRole);
+    const loginId = JSON.parse(localStorage.getItem('loginId'))
+    axios.get(`http://localhost:5000/api/wishlist/view_wishlist/${loginId}`).then((res) => {
+      console.log(res.data.data);
+
+      setWishlist(res.data.data)
+
+    })
+  }, [checkwishlist])
+
+
+  const WishListProduct = (id) => {
+    const wishlistData = {
+      user_loginId: JSON.parse(localStorage.getItem('loginId')),
+      product_Id: id
+    }
+    axios.post(`http://localhost:5000/api/wishlist/add_to_wishlist/`, wishlistData).then((res) => {
+      console.log(res.data.message);
+      setCheckWishlist(!checkwishlist)
+      toast.success(res.data.message)
+
+
+    }).catch((error) => {
+      console.log(error);
+
+    })
+  }
+
+  useEffect(() => {
+    const loginRole = JSON.parse(localStorage.getItem('role'));
+    setRole(loginRole);
   }, []);
 
-  
+
   const navigate = useNavigate()
 
   const [product, setProduct] = useState([])
@@ -97,7 +131,7 @@ export default function AllProduct() {
       <div>
 
         <h1 style={{ textAlign: "center" }}>All products</h1><br></br>
-        <div style={{ textAlign: "center"}}>
+        <div style={{ textAlign: "center" }}>
           <h3>Category</h3>
           <button className="button type1">
             <span className="btn-txt" onClick={() => { Category('') }}>All</span>
@@ -128,8 +162,19 @@ export default function AllProduct() {
                       {value.description}
                     </p><br></br>
                     <div className='icon'>
-                      <i className="fa-regular fa-heart" />
-                      <i class="fa-solid fa-cart-shopping"  onClick={()=>{
+
+                      {wishlist.filter((data) => {
+                        return data.product_Id === value._id
+                      })[0] ? <i className="fa-solid fa-heart" style={{ color: "#ff0000" }} onClick={() => {
+                        WishListProduct(value._id)
+                      }} /> : <i className="fa-regular fa-heart" onClick={() => {
+                        WishListProduct(value._id)
+                      }} />}
+
+                     
+
+
+                      <i class="fa-solid fa-cart-shopping" onClick={() => {
                         cartProduct(value._id)
                       }}></i>
 
@@ -140,8 +185,8 @@ export default function AllProduct() {
                       <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
                       <div> {value.quantity}</div>
                     </p>
-                    <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px" ,gap:"10px" }}>
-                      <button type="submit" className="btn bttn-success"  onClick={() => {
+                    <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px", gap: "10px" }}>
+                      <button type="submit" className="btn bttn-success" onClick={() => {
                         productDelete(value._id)
                       }}><b>Delete</b></button>
                       <button type="button" className="btn bttn-success" onClick={() => {
@@ -164,8 +209,16 @@ export default function AllProduct() {
                       {value.description}
                     </p><br></br>
                     <div className='icon'>
-                      <i className="fa-regular fa-heart" />
-                      <i class="fa-solid fa-cart-shopping"  onClick={()=>{
+                      {wishlist.filter((data) => {
+                        return data.product_Id === value._id
+                      })[0] ? <i className="fa-solid fa-heart" style={{ color: "#ff0000" }} onClick={() => {
+                        WishListProduct(value._id)
+                      }} /> : <i className="fa-regular fa-heart" onClick={() => {
+                        WishListProduct(value._id)
+                      }} />}
+
+
+                      <i class="fa-solid fa-cart-shopping" onClick={() => {
                         cartProduct(value._id)
                       }}></i>
 
@@ -176,11 +229,11 @@ export default function AllProduct() {
                       <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
                       <div> {value.quantity}</div>
                     </p>
-                    <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px" ,gap:"10px"}}>
-                      <button type="submit" className="btn bttn-success"  onClick={() => {
+                    <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px", gap: "10px" }}>
+                      <button type="submit" className="btn bttn-success" onClick={() => {
                         productDelete(value._id)
                       }}><b>Delete</b></button>
-                      <button type="button" className="btn bttn-success"  onClick={() => {
+                      <button type="button" className="btn bttn-success" onClick={() => {
                         productEdit(value._id)
                       }}><b>Edit</b>  </button>
                     </div>
@@ -195,6 +248,7 @@ export default function AllProduct() {
 
       {/* <h2><i>INDOOR PLANTS</i></h2> */}
       {/* <CareTips/> */}
+      <Footer/>
     </div>
   )
 }

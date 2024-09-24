@@ -10,19 +10,29 @@ import Footer from '../components/Footer'
 
 
 export default function OutdoorHome() {
-  const cartProduct=(id)=>{
-    const data={
-      user_login_id:JSON.parse(localStorage.getItem('loginId')),
-      product_Id:id
+  const [checkwishlist, setCheckWishlist] = useState(false)
+  const [wishlist, setWishlist] = useState([])
+
+  useEffect(() => {
+    const loginId = JSON.parse(localStorage.getItem('loginId'))
+    axios.get(`http://localhost:5000/api/wishlist/view_wishlist/${loginId}`).then((res) => {
+      console.log(res.data.data);
+      setWishlist(res.data.data)
+    })
+  }, [checkwishlist])
+  const cartProduct = (id) => {
+    const data = {
+      user_login_id: JSON.parse(localStorage.getItem('loginId')),
+      product_Id: id
     }
-    axios.post(`http://localhost:5000/api/cart/add_to_cart/`,data).then((res)=>{
+    axios.post(`http://localhost:5000/api/cart/add_to_cart/`, data).then((res) => {
       console.log(res.data.message);
       toast.success(res.data.message)
-      
+
     }).catch((error) => {
       console.log(error);
       // toast.error()
-      
+
 
 
     })
@@ -30,8 +40,8 @@ export default function OutdoorHome() {
   const [role, setRole] = useState('');
 
   useEffect(() => {
-      const loginRole = JSON.parse(localStorage.getItem('role'));
-      setRole(loginRole);
+    const loginRole = JSON.parse(localStorage.getItem('role'));
+    setRole(loginRole);
   }, []);
 
 
@@ -71,7 +81,7 @@ export default function OutdoorHome() {
   }
   // const value = setInput([...input])
   // console.log(value);
-  const productApprove=(product_Id)=>{
+  const productApprove = (product_Id) => {
     axios.post(`http://localhost:5000/api/admin/product-approve/${product_Id}`, product).then((res) => {
       console.log(res);
       toast.success(res.data.message)
@@ -79,7 +89,23 @@ export default function OutdoorHome() {
 
     }).catch((error) => {
       console.log(error);
-      toast.error(error.response?.data?.message || error.message); 
+      toast.error(error.response?.data?.message || error.message);
+
+    })
+  }
+  const WishListProduct = (id) => {
+    const wishlistData = {
+      user_loginId: JSON.parse(localStorage.getItem('loginId')),
+      product_Id: id
+    }
+    axios.post(`http://localhost:5000/api/wishlist/add_to_wishlist/`, wishlistData).then((res) => {
+      console.log(res.data.message);
+      setCheckWishlist(!checkwishlist)
+      toast.success(res.data.message)
+
+
+    }).catch((error) => {
+      console.log(error);
 
     })
   }
@@ -123,32 +149,42 @@ export default function OutdoorHome() {
           ))} */}
           <Toaster />
           {product.map((value, index) => (
-            role ==='user'?(
+            role === 'user' ? (
               <div>
-              <div className='image-card'>
+                <div className='image-card'>
 
-                <div className=" shop-card">
-                  <img src={value.product_img}></img>
-                  <div className="card__content">
-                    <p className="card__title">{value.productName}</p>
+                  <div className=" shop-card">
+                    <img src={value.product_img}></img>
+                    <div className="card__content">
+                      <p className="card__title">{value.productName}</p>
 
-                    <p className="card__description">
-                     {value.description}
-                    </p><br></br>
-                    <div className='icon'>
-                      <i className="fa-regular fa-heart" />
-                      <i class="fa-solid fa-cart-shopping" onClick={()=>{
-                        cartProduct(value._id)
-                      }}></i>
+                      <p className="card__description">
+                        {value.description}
+                      </p><br></br>
+                      <div className='icon'>
 
-                    </div>
+                        {wishlist.filter((data) => {
+                          return data.product_Id === value._id
 
-                    <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
-                      <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
-                      <div> {value.quantity}</div>
-                    </p>
-                    <br></br><br></br><br></br>
-                    {/* <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px",gap:"10px" }}>
+                        })[0] ? <i className="fa-solid fa-heart"  style={{ color: "#ff0000" }} onClick={() => {
+                          WishListProduct(value._id)
+                        }} /> : <i className="fa-regular fa-heart" onClick={() => {
+                          WishListProduct(value._id)
+                        }} />}
+
+
+                        <i class="fa-solid fa-cart-shopping" onClick={() => {
+                          cartProduct(value._id)
+                        }}></i>
+
+                      </div>
+
+                      <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
+                        <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
+                        <div> {value.quantity}</div>
+                      </p>
+                      <br></br><br></br><br></br>
+                      {/* <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px",gap:"10px" }}>
                       <button type="submit" className="btn bttn-success"  onClick={() => {
                         productDelete(value._id)
                       }}><b>Delete</b></button>
@@ -156,79 +192,79 @@ export default function OutdoorHome() {
                         productEdit(value._id)
                       }}><b>Edit</b>  </button>
                     </div> */}
+                    </div>
                   </div>
                 </div>
+
               </div>
-
-            </div>
-           ) : role === 'admin'?(
+            ) : role === 'admin' ? (
               <div>
-              <div className='image-card'>
+                <div className='image-card'>
 
-                <div className=" shop-card">
-                  <img src={value.product_img}></img>
-                  <div className="card__content">
-                    <p className="card__title">{value.productName}</p>
+                  <div className=" shop-card">
+                    <img src={value.product_img}></img>
+                    <div className="card__content">
+                      <p className="card__title">{value.productName}</p>
 
-                    <p className="card__description">
-                     {value.description}
-                    </p><br></br>
-                    <div className='icon'>
-                      <i className="fa-regular fa-heart" />
-                      <i class="fa-solid fa-cart-shopping"></i>
+                      <p className="card__description">
+                        {value.description}
+                      </p><br></br>
+                      <div className='icon'>
+                        <i className="fa-regular fa-heart" />
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                      </div>
+
+                      <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
+                        <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
+                        <div> {value.quantity}</div>
+                      </p>
+                      <br></br><br></br><br></br>
+                      {value.status == 'Approved' ?
+                        <button type="submit" className="btn bttn-success" onClick={() => {
+                          productDelete(value._id)
+                        }}><b>Delete</b></button>
+                        :
+                        <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px", gap: "10px" }}>
+                          <button type="button" className="btn bttn-success" onClick={() => {
+                            productApprove(value._id)
+                          }}><b>Approve</b>  </button>
+                          <button type="submit" className="btn bttn-success" onClick={() => {
+                            productDelete(value._id)
+                          }}><b>Delete</b></button>
+
+                        </div>
+                      }
 
                     </div>
-
-                    <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
-                      <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
-                      <div> {value.quantity}</div>
-                    </p>
-                    <br></br><br></br><br></br>
-                    {value.status=='Approved' ?
-                     <button type="submit" className="btn bttn-success"  onClick={() => {
-                      productDelete(value._id)
-                    }}><b>Delete</b></button>
-                    :
-                    <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px",gap:"10px" }}>
-                    <button type="button" className="btn bttn-success" onClick={() => {
-                        productApprove(value._id)
-                      }}><b>Approve</b>  </button>
-                      <button type="submit" className="btn bttn-success"  onClick={() => {
-                        productDelete(value._id)
-                      }}><b>Delete</b></button>
-                     
-                    </div>
-                  }
-                   
                   </div>
                 </div>
+
               </div>
-
-            </div>
-            ):role === 'shop' ?(
+            ) : role === 'shop' ? (
               <div>
-              <div className='image-card'>
+                <div className='image-card'>
 
-                <div className=" shop-card">
-                  <img src={value.product_img}></img>
-                  <div className="card__content">
-                    <p className="card__title">{value.productName}</p>
+                  <div className=" shop-card">
+                    <img src={value.product_img}></img>
+                    <div className="card__content">
+                      <p className="card__title">{value.productName}</p>
 
-                    <p className="card__description">
-                     {value.description}
-                    </p><br></br>
-                    <div className='icon'>
-                      <i className="fa-regular fa-heart" />
-                      <i class="fa-solid fa-cart-shopping"></i>
+                      <p className="card__description">
+                        {value.description}
+                      </p><br></br>
+                      <div className='icon'>
+                        <i className="fa-regular fa-heart" />
+                        <i class="fa-solid fa-cart-shopping"></i>
 
-                    </div>
+                      </div>
 
-                    <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
-                      <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
-                      <div> {value.quantity}</div>
-                    </p>
-                    <br></br><br></br><br></br>
-                    {/* <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px",gap:"10px" }}>
+                      <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
+                        <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
+                        <div> {value.quantity}</div>
+                      </p>
+                      <br></br><br></br><br></br>
+                      {/* <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px",gap:"10px" }}>
                       <button type="submit" className="btn bttn-success"  onClick={() => {
                         productDelete(value._id)
                       }}><b>Delete</b></button>
@@ -236,23 +272,23 @@ export default function OutdoorHome() {
                         productEdit(value._id)
                       }}><b>Edit</b>  </button>
                     </div> */}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-            </div>
-            ):null
-            
-          
+              </div>
+            ) : null
+
+
           ))}
         </div>
       </div>
       <br></br><br></br>
 
 
-      
+
       <CareTips /><br></br>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

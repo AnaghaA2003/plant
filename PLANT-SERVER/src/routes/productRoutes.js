@@ -202,5 +202,4 @@ productRoutes.get('/single-productView/:id', async (req, res) => {
 
 
 
-
 module.exports = productRoutes

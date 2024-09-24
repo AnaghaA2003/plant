@@ -44,7 +44,7 @@ export default function ShopMore() {
       
       <h1 style={{ textAlign: "center", fontFamily: "sans-serif", fontWeight: "bold" }}>OUR PRODUCTS</h1>
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-        <div className='image-card' >
+        <div className='image-card' style={{display:"flex",justifyContent:"space-between",gap:"20px"}}>
           {more.map((value, index) => (
             <div className=" shop-card">
               <img src={value.product_img}></img>
