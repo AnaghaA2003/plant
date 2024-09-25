@@ -94,6 +94,7 @@
       align-items: center;
     }
   
+  
     .footer-logo h2 {
       font-size: 2rem;
     }
@@ -110,3 +111,23 @@
     }
   }
   
+  @media screen and (max-width: 316px) {
+    .footer {
+      background-color: #2d4a22;
+      padding: 50px 20px;
+      color: #f1f1f1;
+      text-align: center;
+      position: relative;
+      width: 225px;
+    }
+  }
+  @media screen and (max-width: 281px) {
+    .footer {
+      background-color: #2d4a22;
+      padding: 50px 20px;
+      color: #f1f1f1;
+      text-align: center;
+      position: relative;
+      width: 319px;
+    }
+  }

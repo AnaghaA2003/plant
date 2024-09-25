@@ -49,7 +49,7 @@ export default function AddProduct() {
 
         axios.post("http://localhost:5000/api/product/product-add", data).then((res) => {
             console.log(res);
-            toast(res.data.message)
+            toast.success(res.data.message)
             // setInput[{...input,data}]
 
         }).catch((error) => {

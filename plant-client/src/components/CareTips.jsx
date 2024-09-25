@@ -8,7 +8,7 @@ export default function CareTips() {
        <div className="container text-center">
         <div className="row align-items-start">
           <div className="col ">
-            <img src="/img/plant care.jpeg" alt="" height="200%" />
+            <img className='colImg' src="/img/plant care.jpeg" alt="" height="200%" />
           </div>
     
     <div className="col colCare" >

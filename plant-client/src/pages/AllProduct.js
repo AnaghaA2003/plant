@@ -179,7 +179,6 @@ export default function AllProduct() {
                       }}></i>
 
                     </div>
-                    <br></br><br></br><br></br>
 
                     <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
                       <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
@@ -207,7 +206,7 @@ export default function AllProduct() {
 
                     <p className="card__description">
                       {value.description}
-                    </p><br></br>
+                    </p>
                     <div className='icon'>
                       {wishlist.filter((data) => {
                         return data.product_Id === value._id

@@ -184,3 +184,58 @@
     transform: translate(-50%, 50%);
     opacity: 1;
    }
+
+   @media screen and (max-width: 850px) { 
+
+    .card-cart {
+    width: 500px;
+    height: 254px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin-left: 35%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 120px;
+   }
+   }
+   @media screen and (max-width: 495px) { 
+
+    .card-cart {
+    width: 500px;
+    height: 254px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin-left: 35%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 4px;
+   }
+   }
+   @media screen and (max-width: 608px) { 
+
+    .card-cart {
+    width: 500px;
+    height: 254px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin-left: 35%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 48px;
+   }
+   }

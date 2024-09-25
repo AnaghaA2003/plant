@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 
 export default function EditIndoorProduct() {
-    const [input, setInput] = useState({
+    const [input, setInput] = useState({ 
         productName: '',
         description: '',
         price: '',

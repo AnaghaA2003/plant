@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 export default function ShopOwnProfileView() {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const [shopProfile, setshopProfile] = useState({})
     useEffect(() => {
         const id = JSON.parse(localStorage.getItem('loginId'));
@@ -24,9 +24,9 @@ export default function ShopOwnProfileView() {
 
         })
     }, [])
-    const shopEdit=(shop_Id)=>{
-        console.log("shopId==>",shop_Id);
-        
+    const shopEdit = (shop_Id) => {
+        console.log("shopId==>", shop_Id);
+
         navigate(`/shopEdit/${shop_Id}`)
     }
 
@@ -45,28 +45,52 @@ export default function ShopOwnProfileView() {
                 crossOrigin="anonymous"
             />
             <NavBar /><br></br>
-            <h2 className='profile'><i>My profile</i></h2><br></br>
+            <h2 className='profile' ><i>My profile</i></h2>
 
 
-            <Container>
-                <Row>
-                    <Col className='profilecol2'><img className='shopimg2' src={shopProfile.shop_img}  ></img>
-                        {/* <Col className='profilecol'> */}
-                        <div className='detailsShop'>
-                            <h1>{shopProfile.shopName}</h1>
-                            <p>{shopProfile.Mobile}</p>
-                            <p>{shopProfile.Address}</p>
-                            <p>{shopProfile.email}</p>
-                            <button className='shopEditbtn' onClick={() => {
-                                                        shopEdit(shopProfile.loginId._id)}}> Edit
-                            </button>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+            
 
-<br></br>
-<Footer/>
+            
+
+
+
+            <div className="shop-profile-container">
+                <div className="shop-banner">
+                    <img
+                        src="/img/shopbg2.jpg"
+                        alt="Shop Banner"
+                        className="banner-img"
+                    />
+                </div>
+
+                <div className="shop-details">
+                    <div className="shop-image">
+                        <img
+                            src={shopProfile.shop_img}
+                            alt="Shop Logo"
+                            className="shop-logo"
+                        />
+                    </div>
+
+                    <div className="shop-info">
+                        <h1>{shopProfile.shopName}</h1>
+                        <p className="shop-description">
+                            {shopProfile.Address}
+                        </p>
+                        <p className="shop-description">
+                            {shopProfile.email}
+                        </p>
+                        <p className="shop-location">{shopProfile.Mobile}</p>
+                        <button className="shop-button" onClick={() => {
+                            shopEdit(shopProfile.loginId._id)
+                        }}>Edit</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <Footer />
         </div>
     )
 }

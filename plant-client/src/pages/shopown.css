@@ -6,6 +6,7 @@
     -webkit-background-clip: text;
     /* color: transparent; */
     text-align: center;
+    font-family: auto;
 }
 
 .profilecol2{
@@ -24,6 +25,127 @@
    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* src/components/ShopProfile.css */
+
+.shop-profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
+
+/* Banner */
+.shop-banner {
+  width: 100%;
+}
+
+.banner-img {
+  width: 100%;
+  height: 359px;
+  object-fit: cover;
+
+
+
+}
+
+/* Shop details */
+.shop-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: -50px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1200px;
+}
+
+.shop-image {
+  margin-bottom: 15px;
+}
+
+.shop-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shop-info {
+  text-align: center;
+}
+
+.shop-info h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.shop-description {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.shop-location {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.shop-button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shop-button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .shop-details {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .shop-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .shop-description {
+    font-size: 1rem;
+  }
+
+  .shop-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
 
 
 

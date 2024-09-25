@@ -78,10 +78,10 @@ export default function Home() {
             
           <div className='slider-section'>
             <div className='s-content'>
-              <h1 className='hello' style={{color:"white"}}><b>Love is the flower <br></br>you’ve got to let grow </b> </h1>
+              <h1 className='hello' style={{color:"white"}}><b>The garden is a mirror of the heart  </b> </h1>
             </div>
             <div className='s-content2'>
-              <h1 className='' >A garden is a way of showing that you believe in tomorrow</h1>
+              <h1 className='' >Plants add life to our world, rooting us in peace and beauty</h1>
 
             </div>
             <img className='bg2' src='/img/homebg8.jpeg' ></img></div>

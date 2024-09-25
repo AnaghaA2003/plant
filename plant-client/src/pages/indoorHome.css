@@ -20,7 +20,7 @@
 
 
 
-@media screen and (max-width:576px) {
+@media screen and (max-width:361px) {
     .nav1{
         /* background-image: url(/img/webp.jpg); */
         background-image: url(/public/img/webp.jpg);
@@ -35,6 +35,27 @@
         width: 0;
         height: 100%;
         width: 100%; */
+        width: 255px;
+        
+    }
+    
+}
+@media screen and (max-width:445px) {
+    .nav1{
+        /* background-image: url(/img/webp.jpg); */
+        background-image: url(/public/img/webp.jpg);
+        background-size: cover;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        /* display: block;
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 100%;
+        width: 100%; */
+        width: 407px;
         
     }
     

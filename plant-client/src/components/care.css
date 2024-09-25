@@ -2,10 +2,121 @@
     border: 3px solid black;
    
 }
-@media screen and (max-width:361px) {
+@media screen and (max-width:376px) {
     .colCare{
         border: 3px solid black;
-       margin-left: 135px;
+       /* margin-left: 25px; */
+       /* width: 90px; */
+       /* margin-right: 14px; */
+       /* padding-left: 140px; */
+       /* width: 398px; */
+    }
+  
+    .colCare i{
+        text-align: center;
+    }
+    .colImg{
+       width: 382px;
+       height: 298px;
+       margin-left: 10px;
+    }
+    
+}
+@media screen and (max-width:432px) {
+    .colCare{
+        border: 3px solid black;
+       margin-left: 85px;
+       /* width: 90px; */
+       margin-right: 14px;
+       /* padding-left: 140px; */
+       /* width: 398px; */
+    }
+  
+    .colCare i{
+        text-align: center;
+    }
+    .colImg{
+       width: 382px;
+       height: 298px;
+       margin-left: 10px;
+    }
+    
+}
+@media screen and (max-width:598px) {
+    .colCare{
+        border: 3px solid black;
+       margin-left: 44px;
+       /* width: 90px; */
+       margin-right: 14px;
+       /* padding-left: 140px; */
+    }
+  
+    .colCare i{
+        text-align: center;
+    }
+    .colImg{
+       /* width: 312px; */
+       /* height: 208px; */
+       margin-left: 10px;
+    }
+    
+}
+@media screen and (max-width:444px) {
+    .colCare{
+        border: 3px solid black;
+       margin-left: 98px;
+       /* width: 90px; */
+       margin-right: 14px;
+       /* padding-left: 140px; */
+    }
+  
+    .colCare i{
+        text-align: center;
+    }
+    .colImg{
+       /* width: 312px; */
+       /* height: 208px; */
+       margin-left: 10px;
+    }
+    
+}
+@media screen and (max-width:490px) {
+    .colCare{
+        border: 3px solid black;
+       margin-left: 36px;
+       /* width: 90px; */
+       margin-right: 25px;
+       margin-top: 25px;
+       /* padding-left: 140px; */
+    }
+  
+    .colCare i{
+        text-align: center;
+    }
+    .colImg{
+       /* width: 312px; */
+       /* height: 208px; */
+       margin-left: 10px;
+    }
+    
+}
+@media screen and (max-width:332px) {
+    .colCare{
+        border: 3px solid black;
+       margin-left: 85px;
+       /* width: 90px; */
+       margin-right: 25px;
+       margin-top: 25px;
+       /* padding-left: 140px; */
+    }
+  
+    .colCare i{
+        text-align: center;
+    }
+    .colImg{
+       /* width: 312px; */
+       /* height: 208px; */
+       margin-left: 10px;
     }
     
 }
