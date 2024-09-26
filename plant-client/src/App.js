@@ -19,6 +19,7 @@ import Cart from './pages/Cart';
 import Footer from './components/Footer';
 import MyOrderProducts from './pages/MyOrderProducts';
 import WishList from './pages/WishList';
+import Payment from './pages/Payment';
 function App() {
   return (
    <BrowserRouter>
@@ -42,6 +43,7 @@ function App() {
     <Route path='/footer' element={<Footer/>}/>
     <Route path='/myOrder' element={<MyOrderProducts/>}/>
     <Route path='/wishlist' element={<WishList/>}/>
+    <Route path='/payment' element={<Payment/>}/>
    </Routes>
    </BrowserRouter>
   );

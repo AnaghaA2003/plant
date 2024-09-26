@@ -151,6 +151,7 @@ export default function AllProduct() {
           <Toaster />
           {filterProduct[0] ?
             filterProduct.map((value, index) => (
+              
               <div className='image-card'>
 
                 <div className=" shop-card">
@@ -184,14 +185,14 @@ export default function AllProduct() {
                       <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
                       <div> {value.quantity}</div>
                     </p>
-                    <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px", gap: "10px" }}>
+                    {/* <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px", gap: "10px" }}>
                       <button type="submit" className="btn bttn-success" onClick={() => {
                         productDelete(value._id)
                       }}><b>Delete</b></button>
                       <button type="button" className="btn bttn-success" onClick={() => {
                         productEdit(value._id)
                       }}><b>Edit</b>  </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -228,14 +229,14 @@ export default function AllProduct() {
                       <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
                       <div> {value.quantity}</div>
                     </p>
-                    <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px", gap: "10px" }}>
+                    {/* <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px", gap: "10px" }}>
                       <button type="submit" className="btn bttn-success" onClick={() => {
                         productDelete(value._id)
                       }}><b>Delete</b></button>
                       <button type="button" className="btn bttn-success" onClick={() => {
                         productEdit(value._id)
                       }}><b>Edit</b>  </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

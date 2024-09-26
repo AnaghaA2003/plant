@@ -8,8 +8,10 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import toast, { Toaster } from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom';
 
 export default function Cart() {
+  const navigate=useNavigate()
   const [subtotal, setSubtotal] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
@@ -84,6 +86,7 @@ export default function Cart() {
       toast.success(res.data.message)
       
     })
+    navigate('/payment')
   }
 
   return (
