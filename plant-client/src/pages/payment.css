@@ -11,18 +11,28 @@
     --ch-white: #e1e1e1;
     font-family: Helvetica, sans-serif;
     text-align: center;
-   margin-top: 90px;
+   /* margin-top: 90px; */
    /* font-family: emoji; */
    font-size: large;
    
+   
   }
   .payment{
-   margin-left: 475px;
-    
+   /* margin-left: 475px; */
+   background-image: url('/public/img/payment2.jpg');
+   background-size: cover;
+   height: 100vh;
+   padding-top: 100px;
+   text-align: center;
+   /* display: flex; */
+   
+   
+
+
   }
   
   .wrapper {
-    /* margin: 2rem auto; */
+    margin: 2rem auto;
     width: 513px;
     font-size: small;
     height: 50px;
@@ -35,6 +45,7 @@
   .paymentTitle {
     text-align: center;
     color: #1b1b1b;
+    /* background-color: #e1e1e1; */
   }
   
   .paymentHead {
@@ -129,7 +140,19 @@
     padding: 14px;
     width: 120%;
     text-align: center;
-    /* margin: auto; */
+    margin: auto;
     border-radius: 10px;
     margin-left: 20px;
+    background-color: #e8e8e8;
+
   }
+
+
+
+
+  /* upi */
+
+
+
+
+  /* From Uiverse.io by zanina-yassine */ 

@@ -20,6 +20,8 @@ import Footer from './components/Footer';
 import MyOrderProducts from './pages/MyOrderProducts';
 import WishList from './pages/WishList';
 import Payment from './pages/Payment';
+import CreditCard from './components/CreditCard';
+import UpiPayment from './components/UpiPayment';
 function App() {
   return (
    <BrowserRouter>
@@ -44,6 +46,8 @@ function App() {
     <Route path='/myOrder' element={<MyOrderProducts/>}/>
     <Route path='/wishlist' element={<WishList/>}/>
     <Route path='/payment' element={<Payment/>}/>
+    <Route path='/creditCard' element={<CreditCard/>}/>
+    <Route path='/upi' element={<UpiPayment/>}/>
    </Routes>
    </BrowserRouter>
   );

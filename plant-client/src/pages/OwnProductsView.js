@@ -105,11 +105,11 @@ export default function OwnProductsView() {
              <p className="card__description">
               {value.description}
              </p><br></br>
-             <div className='icon'>
+             {/* <div className='icon'>
                <i className="fa-regular fa-heart" />
                <i class="fa-solid fa-cart-shopping"></i>
 
-             </div>
+             </div> */}
              <br></br><br></br><br></br>
 
              <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
@@ -139,11 +139,11 @@ export default function OwnProductsView() {
               <p className="card__description">
                 {value.description}
               </p><br></br>
-              <div className='icon'>
+              {/* <div className='icon'>
                 <i className="fa-regular fa-heart" />
                 <i class="fa-solid fa-cart-shopping"></i>
 
-              </div>
+              </div> */}
               <br></br><br></br><br></br>
 
               <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
