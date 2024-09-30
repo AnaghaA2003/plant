@@ -1,7 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './upiPayment.css'
 
 export default function UpiPayment() {
+  const[input,setInput]=useState({
+    cardNumber:'',
+    name:'',
+    expDate:'',
+    cvv:'',
+  })
+  const[error,setError]=useState({})
+  const inputChange=(event)=>{
+    const name=event.target.name
+    const value=event.target.value
+    setInput({...input,[name]:value})
+  }
+  const submit=(event)=>{
+    event.preventDefault()
+    if (!validationError()) {
+      console.log('error');
+      return;
+
+    }
+    const data = new FormData();
+    data.append('cardName', input.cardName)
+    data.append('name', input.name)
+    data.append('expDate', input.expDate)
+    data.append('cvv', input.cvv)
+
+  
+   
+    
+  }
+
+  const validationError=()=>{
+    const errorMessage={};
+    if(!input.cardNumber.trim()){
+      errorMessage.cardNumber='card number is required'
+    }
+    else if(input.cardNumber.trim()<=16){
+      errorMessage.cardNumber='card number must be 16 digits'
+
+    }
+    if(!input.name.trim()){
+      errorMessage.name='Name is required'
+    }
+    if(!input.expDate.trim()){
+      errorMessage.expDate='year is required'
+    }
+  
+    if(!input.cvv.trim()){
+      errorMessage.cvv='cvv is required'
+    }
+    setError(errorMessage);//push error message into error state
+    return Object.keys(errorMessage).length === 0;
+  }
+
   return (
     <div>
       <>
@@ -139,6 +192,8 @@ export default function UpiPayment() {
       </div>
       <div className="credit-card-info--form">
         <div className="input_container">
+      <span style={{color:"red"}}>{error.name}</span>
+
           <label htmlFor="password_field" className="input_label">
             Card holder full name
           </label>
@@ -146,12 +201,16 @@ export default function UpiPayment() {
             id="password_field"
             className="input_field"
             type="text"
-            name="input-name"
+            name="name"
             title="Inpit title"
             placeholder="Enter your full name"
+            onChange={inputChange}
+            
           />
         </div>
         <div className="input_container">
+      <span style={{color:"red"}}>{error.cardNumber}</span>
+
           <label htmlFor="password_field" className="input_label">
             Card Number
           </label>
@@ -159,12 +218,17 @@ export default function UpiPayment() {
             id="password_field"
             className="input_field"
             type="number"
-            name="input-name"
+            name="cardNumber"
             title="Inpit title"
             placeholder="0000 0000 0000 0000"
+            onChange={inputChange}
+
           />
         </div>
         <div className="input_container">
+      
+      <span style={{color:"red"}}>{error.expDate}</span>  <span style={{color:"red"}}>{error.cvv}</span>
+
           <label htmlFor="password_field" className="input_label">
             Expiry Date / CVV
           </label>
@@ -173,10 +237,13 @@ export default function UpiPayment() {
               id="password_field"
               className="input_field"
               type="text"
-              name="input-name"
+              name="expDate"
               title="Expiry Date"
               placeholder="01/23"
+            onChange={inputChange}
+
             />
+
             <input
               id="password_field"
               className="input_field"
@@ -184,11 +251,13 @@ export default function UpiPayment() {
               name="cvv"
               title="CVV"
               placeholder="CVV"
+            onChange={inputChange}
+
             />
           </div>
         </div>
       </div>
-      <button className="purchase--btn">Checkout</button>
+      <button className="purchase--btn" onClick={submit}>Checkout</button>
     </form>
   </div>
 </>

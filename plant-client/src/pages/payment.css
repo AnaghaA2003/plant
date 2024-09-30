@@ -18,19 +18,15 @@
    
   }
   .payment{
-   /* margin-left: 475px; */
-   background-image: url('/public/img/payment2.jpg');
-   background-size: cover;
-   height: 100vh;
    padding-top: 100px;
-   text-align: center;
-   /* display: flex; */
-   
-   
-
-
   }
-  
+  .buy{
+    background-image: url('/public/img/payment2.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+  }
   .wrapper {
     margin: 2rem auto;
     width: 513px;

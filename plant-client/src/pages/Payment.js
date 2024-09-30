@@ -1,9 +1,7 @@
 import React from 'react'
 
 import './payment.css'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 import CreditCard from '../components/CreditCard';
 import UpiPayment from '../components/UpiPayment';
 
@@ -23,9 +21,9 @@ export default function Payment() {
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossOrigin="anonymous"
       />
-      <Container className='payment'>
-        <Row>
-          <Col>
+      <div className='buy'>
+      <div className='payment'>
+        
           
             <div className="paymentCard">
               <div className="paymentTitle">
@@ -56,17 +54,20 @@ export default function Payment() {
 
 
          
-          </Col>
-        <Col>
+          
+          </div>
+
+       <div className='payment'> 
+          <UpiPayment />
+       </div>
+         
+         {/* <Col>
         <CreditCard />
-       </Col>
-        <Col>
-        <UpiPayment />
-       </Col>
+       </Col> */}
       
      
-      </Row>
-    </Container>
+     
+    </div>
      
 
 
