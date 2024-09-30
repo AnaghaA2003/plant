@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './creditCard.css'
 
 export default function CreditCard() {
+  const[input,setInput]=useState({
+    cardNumber:'',
+    name:'',
+    month:'',
+    year:'',
+    cw:'',
+  })
+  const [error,setError]=useState({})
+
+  const validationError=()=>{
+    const errorMessage={};
+
+  }
   return (
     <div>
         
