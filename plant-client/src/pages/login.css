@@ -122,3 +122,53 @@
 .forget{
     color: whitesmoke;
 }
+
+
+
+
+@media screen and (max-width:373px){
+
+  .login-form {
+    position: relative;
+    display: flex;
+    /* width: fit-content; */
+    width: 103%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 17px 30px;
+    margin-left: 0%;
+    background: rgb(83, 137, 83);
+    border-radius: 10px;
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    animation: form-animation 0.5s ease-in-out;
+  }
+  
+}
+/* @media screen and (min-width:588px){
+
+  .login-form {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    width: 40%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 50px 30px;
+    margin-left: 15%;
+    background: rgb(17, 0, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+    transition: all 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    animation: form-animation 0.5s ease-in-out;
+  }
+  
+} */
