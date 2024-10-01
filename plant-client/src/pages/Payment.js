@@ -2,11 +2,12 @@ import React from 'react'
 
 import './payment.css'
 
-import CreditCard from '../components/CreditCard';
+// import CreditCard from '../components/CreditCard';
 import UpiPayment from '../components/UpiPayment';
 
 
 export default function Payment() {
+  const total=localStorage.getItem('totalCart')
   return (
     <div>
       <meta charSet="UTF-8" />
@@ -28,11 +29,11 @@ export default function Payment() {
             <div className="paymentCard">
               <div className="paymentTitle">
                 <p className="paymentHead"><b>PAYING</b> <span style={{ color: "green" }}><b>PLANT</b></span></p>
-                <p className="desc"><b>Amount <br></br><span style={{ fontSize: "20px", color: "brown" }}>Rs.450</span></b></p>
+                <p className="desc"><b>Amount <br></br><span style={{ fontSize: "20px", color: "brown" }}>Rs.{total}</span></b></p>
               </div>
               <div className="wrapper">
                 <div className="color black">
-                  <b style={{ textAlign: "center" }}>Select Payment Option</b>
+                  <b style={{ textAlign: "center" }}> Payment Options</b>
                   {/* <span className="hex">#000000</span> */}
                 </div>
                 <div className="color eerie-black">

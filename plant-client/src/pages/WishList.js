@@ -33,6 +33,21 @@ export default function WishList() {
 
         })
     },[])
+    const removeWishlist=(_id)=>{
+        axios.post(`http://localhost:5000/api/wishlist/remove_wishlist/${_id}`).then((res)=>{
+            console.log(res.data.message);
+            toast.success(res.data.message)
+
+            const deleteWishlist= wishlist.filter((value)=>{
+                return value._id!=_id
+            })
+            setWishlist(deleteWishlist)
+            
+        }).catch((error)=>{
+            console.log(error);
+            
+        })
+    }
     return (
         <div>
             <meta charSet="UTF-8" />
@@ -63,6 +78,10 @@ export default function WishList() {
                     
                     <div className="main">
                         <div className="wishlist-card">
+                    <i class="fa-solid fa-heart  " style={{ marginLeft: "10px",fontSize:"20px",color:"#ff0000" }} onClick={ ()=>{
+                        removeWishlist(value._id)
+                    }}></i><br></br>
+
                             <div className="wishlist-heading">{value.productName}</div>
                             <div className="wishlist-details">
                                {value.description}

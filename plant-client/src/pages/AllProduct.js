@@ -168,9 +168,10 @@ export default function AllProduct() {
                         return data.product_Id === value._id
                       })[0] ? <i className="fa-solid fa-heart" style={{ color: "#ff0000" }} onClick={() => {
                         WishListProduct(value._id)
-                      }} /> : <i className="fa-regular fa-heart" onClick={() => {
+                      }} /> 
+                      : <i className="fa-regular fa-heart" onClick={() => {
                         WishListProduct(value._id)
-                      }} />}
+                      }} />} 
 
                      
 

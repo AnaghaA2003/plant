@@ -36,6 +36,7 @@ export default function Cart() {
     setSubtotal(subTotalCalc);
     setDiscount(discountCalc);
     setCartTotal(totalCalc);
+    localStorage.setItem('totalCart',cartTotal)
   }, [ViewCart]);
   const decrement = (_id) => {
     axios.post(`http://localhost:5000/api/cart/quantity-decrement/${_id}`, ViewCart).then((res) => {
@@ -86,7 +87,7 @@ export default function Cart() {
       toast.success(res.data.message)
       
     })
-    navigate('/payment')
+    navigate('/payment');
   }
 
   return (
