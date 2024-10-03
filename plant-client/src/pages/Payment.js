@@ -24,8 +24,6 @@ export default function Payment() {
       />
       <div className='buy'>
       <div className='payment'>
-        
-          
             <div className="paymentCard">
               <div className="paymentTitle">
                 <p className="paymentHead"><b>PAYING</b> <span style={{ color: "green" }}><b>PLANT</b></span></p>

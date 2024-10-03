@@ -11,8 +11,9 @@ export default function MyOrderProducts() {
   const[MyOrder,setMyOrder]=useState([])
   useEffect(()=>{
     const logid=JSON.parse(localStorage.getItem('loginId'))
-    axios.get(`http://localhost:5000/api/cart/view_cart/${logid}`).then((res)=>{
-      console.log(res.data.data);
+    axios.get(`http://localhost:5000/api/order/myorder/${logid}`).then((res)=>{
+
+      console.log(res);
       setMyOrder(res.data.data);
 
     })
@@ -40,7 +41,7 @@ export default function MyOrderProducts() {
 
 
     <div style={{ display: "grid", gap: "40px" }}>
-        {MyOrder.filter((data)=>{return data.status==='order placed'}).map((value,index)=>(
+        {MyOrder.map((value,index)=>(
           <div className="ordercards">
           <div className="ordercard red">
             <div >

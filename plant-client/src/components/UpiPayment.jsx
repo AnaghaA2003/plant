@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import './upiPayment.css'
 import axios from 'axios'
-import toast,{Toaster} from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function UpiPayment() {
-  const[ViewCart,setViewCart]=useState([])
+  const [ViewCart, setViewCart] = useState([])
   const [input, setInput] = useState({
     cardNumber: '',
     name: '',
@@ -18,22 +18,33 @@ export default function UpiPayment() {
     setInput({ ...input, [name]: value })
   }
   const submit = (event) => {
-    const _id=JSON.parse(localStorage.getItem('loginId'))
-    axios.post(`http://localhost:5000/api/cart/status-update/${_id}`,ViewCart).then((res)=>{
-      console.log(res.data.message);
-      const dataFilter=ViewCart.filter((value)=>{
-        return value.user_loginId!=_id
-      })
-      setViewCart(dataFilter)
-      toast.success(res.data.message)
-      
-    })
     event.preventDefault()
     if (!validationError()) {
       console.log('error');
       return;
 
     }
+    // const _id=JSON.parse(localStorage.getItem('loginId'))
+    // axios.post(`http://localhost:5000/api/cart/status-update/${_id}`,ViewCart).then((res)=>{
+    //   console.log(res.data.message);
+    //   const dataFilter=ViewCart.filter((value)=>{
+    //     return value.user_loginId!=_id
+    //   })
+    //   setViewCart(dataFilter)
+    //   toast.success(res.data.message)
+
+    // })
+    const _id = JSON.parse(localStorage.getItem('loginId'))
+    axios.get(`http://localhost:5000/api/order/cart-addproduct-order/${_id}`).then((res)=>{
+      console.log(res.data.message);
+      toast.success(res.data.message)
+      
+    })
+
+
+
+
+   
     const data = new FormData();
     data.append('cardName', input.cardName)
     data.append('name', input.name)
@@ -65,15 +76,17 @@ export default function UpiPayment() {
 
 
 
-   
+
   }
+
+
 
   return (
     <div>
       <>
         <div className="paymentmodal">
           <form className="paymentform2">
-            <Toaster/>
+            <Toaster />
             <div className="payment--options">
               <button name="paypal" type="button">
                 <svg

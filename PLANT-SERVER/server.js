@@ -10,6 +10,7 @@ const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 const cartRoutes = require('./src/routes/cartRoutes');
 const wishlistRoutes = require('./src/routes/wishlistRoutes');
+const orderRoutes = require('./src/routes/orderRoutes');
 
 require('dotenv').config();//contents of .env
 mongoose.connect(process.env.MONGO_URL).then(()=>{
@@ -28,6 +29,7 @@ app.use('/api/shop',shopRoutes)
 app.use('/api/admin',adminRoutes)
 app.use('/api/cart',cartRoutes)
 app.use('/api/wishlist',wishlistRoutes)
+app.use('/api/order',orderRoutes)
 
 app.get('/',(req,res)=>{
     return res.send('Welcome')

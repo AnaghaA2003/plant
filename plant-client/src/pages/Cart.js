@@ -77,17 +77,17 @@ export default function Cart() {
     })
   }
   const checkOut=()=>{
-    const _id=JSON.parse(localStorage.getItem('loginId'))
-    axios.post(`http://localhost:5000/api/cart/status-update/${_id}`,ViewCart).then((res)=>{
-      console.log(res.data.message);
-      const dataFilter=ViewCart.filter((value)=>{
-        return value.user_loginId!=_id
-      })
-      setViewCart(dataFilter)
-      toast.success(res.data.message)
+    // const _id=JSON.parse(localStorage.getItem('loginId'))
+    // axios.post(`http://localhost:5000/api/cart/status-update/${_id}`,ViewCart).then((res)=>{
+    //   console.log(res.data.message);
+    //   const dataFilter=ViewCart.filter((value)=>{
+    //     return value.user_loginId!=_id
+    //   })
+    //   setViewCart(dataFilter)
+    //   toast.success(res.data.message)
       
-    })
-    navigate('/payment');
+    // })
+    navigate('/payment');  
   }
 
   return (
