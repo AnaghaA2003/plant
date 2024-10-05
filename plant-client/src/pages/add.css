@@ -11,7 +11,7 @@
 }
  .addHead{
     text-align: center;
-    text-shadow:1px 1p  50px blue;
+    /* text-shadow:1px 1p  50px blue; */
     /* border: 3px solid violet; */
     color: green;
     font-weight: bolder;
@@ -54,13 +54,15 @@
 
 
 
- /* From Uiverse.io by KINGFRESS */ 
+ /* From Uiverse.io by KINGFRESS */
+  
 .button-btn {
    font-family: Arial, Helvetica, sans-serif;
    font-weight: bold;
    color: white;
    background-color: #171717;
    /* padding: 1em 2em; */
+   padding-top: 1px;
    border: none;
    border-radius: .6rem;
    position: relative;
@@ -111,3 +113,4 @@
    transition: 1.5s ease;
  }
    
+

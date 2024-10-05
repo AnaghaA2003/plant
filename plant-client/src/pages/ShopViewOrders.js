@@ -1,6 +1,10 @@
 import React from 'react'
 import './shopViewOrders.css'
 import NavBar from '../components/Nav'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 export default function ShopViewOrders() {
   return (
@@ -17,26 +21,34 @@ export default function ShopViewOrders() {
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossOrigin="anonymous"
       />
-      <NavBar/>
-      <div className='order'>
- 
-  <div className="orderCard">
-   
-    <div className="orderCard__image"> <img src='/img/bg-3.jpg'></img></div>
-    <div className="orderCard__content">
-      <p className="orderCard__title">Card Title</p>
-      <p className="orderCard__text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <a className="orderCard__button" href="#">
-        Read More
-      </a>
-    </div>
-  </div>
-</div>
+      <NavBar/><br></br>
+
+      <div className='orderView' >
+      <Container >
+{/* <Row>
+<Col>1 of 2</Col>
+
+</Row><br></br> */}
+      <Row>
+      <Col className='orderbg'> <img src='/img/outbg.avif' height={"50%"}></img>
+
+      <span>productName</span><br></br>
+      <span>description</span><br></br>
+      <span>price</span><br></br>
+      <span>quantity</span>
+      </Col>
+      
+        <Col>
+        <span>UserName</span><br></br>
+        <span>Address</span><br></br>
+        <span>Mobile</span><br></br>
+        </Col>
+      </Row>
+     
+      </Container>
 
 
+      </div>
     </div>
   )
 }

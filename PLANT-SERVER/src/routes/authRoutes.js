@@ -4,6 +4,7 @@ const shopSchema = require('../models/shopSchema')
 const userSchema = require('../models/userSchema')
 const cloudinary=require("cloudinary").v2
 const {CloudinaryStorage}=require("multer-storage-cloudinary")
+const jwt=require('jsonwebtoken')
 const multer=require("multer")
 require('dotenv').config();
 
@@ -157,11 +158,23 @@ authRoutes.post('/login-check', async (req, res) => {
                     message:"user has been blocked"
                 })
             }else{
+
+                const token=jwt.sign( //encode chyan vendi use chyna method
+                    {
+                        userLoginId:oldData._id,
+                        email:oldData.email,
+                        role:oldData.role,
+                        status:oldData.status
+                    },
+                    "private-key",
+                    {expiresIn:'1h'}
+                )
             
             return res.status(200).json({
                 success: true,
                 error: false,
                 data: oldData,
+                token:token,
                 message:"User login successfully"
 
             })

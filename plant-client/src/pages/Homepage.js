@@ -46,80 +46,83 @@ export default function Home() {
         <Nav />
 
         <AwesomeSlider className="custom-slider">
-          <div className='slider-section'>
-            <div className='s-content'>
-              <h1 className='hello'><b>Design Your Home <br></br> Your Way</b> </h1>
-            </div>
-            <div className='s-content2'>
-              <h1 className=''>Provide Your Home & Office Space <br></br> With The Right Plants And  <br></br>Let Our Plant Care Team Keep Them 𝓯𝓵𝓸𝓾𝓻𝓲𝓼𝓱𝓲𝓷𝓰</h1>
-
-            </div>
-            <img className='bg1' src='/img/homebg5.jpeg'></img>
+        <div className='slider-section'>
+          <div className='s-content'>
+            <h1 className='hello'><b>Design Your Home <br /> Your Way</b></h1>
           </div>
-          <div className='slider-section'>
-            <div className='s-content'>
-              <h1 className='hello' style={{color:"gainsboro"}}><b>Turning Over a <br></br>new leaf </b> </h1>
-            </div>
-            <div className='s-content2'>
-              <h1 className='' >Plants are the best therapy. They require attention, patience, and nurture, and in return, they provide beauty and tranquility.</h1>
+          <div className='s-content2'>
+            <h1>Provide Your Home & Office Space <br /> With The Right Plants And <br /> Let Our Plant Care Team Keep Them Flourishing</h1>
+          </div>
+          <img className='bg1' src='/img/homebg5.jpeg' alt="Background 1" />
+        </div>
 
-            </div>
-            <img className='bg2' src='/img/homebg6.jpg' ></img></div>
-            
-            <div className='slider-section'>
-            <div className='s-content'>
-              <h1 className='hello' style={{color:"bisque",fontFamily:"cursive"}}><b>Love is the flower <br></br>you’ve got to let grow </b> </h1>
-            </div>
-            <div className='s-content2'>
-              <h1 className='' >A garden is a way of showing that you believe in tomorrow</h1>
+        <div className='slider-section'>
+          <div className='s-content'>
+            <h1 className='hello' style={{color: "gainsboro"}}><b>Turning Over a <br /> New Leaf</b></h1>
+          </div>
+          <div className='s-content2'>
+            <h1>Plants are the best therapy. They require attention, patience, and nurture, and in return, they provide beauty and tranquility.</h1>
+          </div>
+          <img className='bg2' src='/img/homebg6.jpg' alt="Background 2" />
+        </div>
 
-            </div>
-            <img className='bg2' src='/img/homebg7.jpg' ></img></div>
-            
-          <div className='slider-section'>
-            <div className='s-content'>
-              <h1 className='hello' style={{color:"white"}}><b>The garden is a mirror of the heart  </b> </h1>
-            </div>
-            <div className='s-content2'>
-              <h1 className='' >Plants add life to our world, rooting us in peace and beauty</h1>
+        <div className='slider-section'>
+          <div className='s-content'>
+            <h1 className='hello' style={{color: "bisque", fontFamily: "cursive"}}><b>Love is the Flower <br /> You’ve Got to Let Grow</b></h1>
+          </div>
+          <div className='s-content2'>
+            <h1>A garden is a way of showing that you believe in tomorrow</h1>
+          </div>
+          <img className='bg2' src='/img/homebg7.jpg' alt="Background 3" />
+        </div>
 
-            </div>
-            <img className='bg2' src='/img/homebg8.jpeg' ></img></div>
-        </AwesomeSlider>
+        <div className='slider-section'>
+          <div className='s-content'>
+            <h1 className='hello' style={{color: "white"}}><b>The Garden is a Mirror of the Heart</b></h1>
+          </div>
+          <div className='s-content2'>
+            <h1>Plants add life to our world, rooting us in peace and beauty</h1>
+          </div>
+          <img className='bg2' src='/img/homebg8.jpeg' alt="Background 4" />
+        </div>
+      </AwesomeSlider>
 
       </div><br></br>
 
       {/* //indoor// */}
 
 
-      <h1 style={{ textAlign: "center", color: "black" }} className='col-head'><b>Why we should be greening <br></br>our home with plants</b></h1>
-      <p style={{ textAlign: "center", textSize: "10px" }}>
-        Improved Air Quality|Enhanced Mental Health|Aesthetic Appeal|Connection to Nature|Health Benefits
-      </p><br></br>
-      <div class="container text-center card">
-        <div class="row">
-          <div class="col " >
-            <img src='/img/webp.jpg' width={"90%"} className='col-img' ></img>
-          </div>
+      <h1 style={{ textAlign: "center", color: "black" }} className='col-head'>
+  <b>Why we should be greening <br />our home with plants</b>
+</h1>
+<p style={{ textAlign: "center", fontSize: "16px" }}>
+  Improved Air Quality | Enhanced Mental Health | Aesthetic Appeal | Connection to Nature | Health Benefits
+</p>
+<br />
 
+<div className="container text-center card">
+  <div className="row">
+    <div className="col-12 col-md-4 mb-4">
+      <img src='/img/webp.jpg' alt="Indoor Plant 1" className='img-fluid col-img' />
+    </div>
 
+    <div className="col-12 col-md-4 mb-4">
+      <img src='/img/h2.jpg' alt="Indoor Plant 2" className='img-fluid col-img' />
+    </div>
 
-          <div class="col" >
+    <div className="col-12 col-md-4 mb-4">
+      <img src='/img/h3.jpg' alt="Indoor Plant 3" className='img-fluid col-img' />
+    </div>
+  </div>
 
-            <img src='/img/h2.jpg' width={"90%"} height={"88%"} className='col-img'></img>
-          </div>
-          <div class="col">
+  <IndoorBenefit />
+  
+  <br />
+  <button type="button" onClick={indoor} className="btn btn-dark mt-3 mx-auto d-block" style={{ width: "200px" }}>
+    See More
+  </button>
+</div>
 
-
-            <img src='/img/h3.jpg' width={"90%"} height={"88%"} className='col-img'></img>
-
-          </div>
-          <IndoorBenefit /><br></br><br></br>
-          <button style={{ textAlign: "center", marginLeft: "40%", width: "20%" }} type="button" onClick={indoor} class="btn btn-dark">
-            See More</button>
-
-        </div>
-      </div>
 
 
 
@@ -129,35 +132,38 @@ export default function Home() {
 
 
 
-      <h1 style={{ textAlign: "center", color: "black" }} className='col-head'><b>Why we should be greening <br></br>our home with plants</b></h1>
-      <p style={{ textAlign: "center", textSize: "10px" }}>
-        Improved Air Quality|Supports Local Wildlife|Aesthetic Appeal|Environmental Benefits|Physical Health Benefits
-      </p><br></br>
-      <div class="container text-center card">
-        <div class="row">
-          <div class="col " >
-            <img src='/img/outdoor home.jpg' width={"90%"} height={"88%"}  className='col-img' ></img>
-          </div>
-          
+      <h1 style={{ textAlign: "center", color: "black" }} className='col-head'>
+  <b>Why we should be greening <br />our home with plants</b>
+</h1>
+<p style={{ textAlign: "center", fontSize: "16px" }}>
+  Improved Air Quality | Supports Local Wildlife | Aesthetic Appeal | Environmental Benefits | Physical Health Benefits
+</p>
+<br />
 
+<div className="container text-center card">
+  <div className="row">
+    <div className="col-12 col-md-4 mb-4">
+      <img src='/img/outdoor home.jpg' alt="Outdoor Plant 1" className='img-fluid col-img' />
+    </div>
 
+    <div className="col-12 col-md-4 mb-4">
+      <img src='/img/outdoor-3.jpg' alt="Outdoor Plant 2" className='img-fluid col-img' />
+    </div>
 
-          <div class="col" >
+    <div className="col-12 col-md-4 mb-4">
+      <img src='/img/outdoor home2.jpg' alt="Outdoor Plant 3" className='img-fluid col-img' />
+    </div>
+  </div>
 
-            <img src='/img/outdoor-3.jpg' width={"90%"} height={"88%"} className='col-img'></img>
-          </div>
-          <div class="col">
+  <OutdoorBenefits />
+  
+  <br />
+  <button type="button" onClick={outdoor} className="btn btn-dark mt-3 mx-auto d-block" style={{ width: "200px" }}>
+    See More
+  </button>
+</div>
+<br />
 
-
-            <img src='/img/outdoor home2.jpg' width={"90%"} height={"88%"} className='col-img'></img>
-
-          </div>
-          <OutdoorBenefits /><br></br><br></br>
-          <button style={{ textAlign: "center", marginLeft: "40%", width: "20%" }} type="button" onClick={outdoor} class="btn btn-dark">
-            See More</button>
-
-        </div>
-      </div><br></br>
 <Footer/>
     </div>
   )

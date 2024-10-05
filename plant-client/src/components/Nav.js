@@ -45,6 +45,7 @@ export default function NavBar() {
                 <Nav.Link href="/shop" style={{ color: "rgb(51, 153, 11)" }}>Shops</Nav.Link>
                 <Nav.Link href="/allProducts" style={{ color: "rgb(51, 153, 11)" }}>All Products</Nav.Link>
                 <Nav.Link href="/myOrder" style={{ color: "rgb(51, 153, 11)" }}>My Orders</Nav.Link>
+                <Nav.Link href="/userOwnprofile" style={{ color: "rgb(51, 153, 11)" }}>Profile</Nav.Link>
               </Nav>
               <div className="d-flex gap-2">
                 <Nav.Link href="#" className="text-success"><i className="fa-solid fa-magnifying-glass"></i> Search</Nav.Link>

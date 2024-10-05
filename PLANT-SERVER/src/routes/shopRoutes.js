@@ -8,6 +8,7 @@ const multer = require("multer")
 const productSchema = require('../models/productSchema')
 const cartSchema = require('../models/cartSchema')
 const { default: mongoose } = require('mongoose')
+const checkauth = require('../middleware/checkauth')
 require('dotenv').config();
 
 
@@ -176,9 +177,12 @@ shopRoutes.get('/single-shopView/:id', async (req, res) => {
         })
     }
 })
-shopRoutes.get('/shopAdd-productView/:id', async (req, res) => {
+shopRoutes.get('/shopAdd-productView/', checkauth, async (req, res) => {
     try {
-        const id = req.params.id
+
+       
+        
+        const id =req.userData.userLoginId //checkauth kodutha id pass chya
         console.log("id==>", id);
 
         const viewData = await productSchema.find({ shop_login_id: id })

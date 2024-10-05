@@ -23,6 +23,8 @@ import Payment from './pages/Payment';
 import CreditCard from './components/CreditCard';
 import UpiPayment from './components/UpiPayment';
 import ShopViewOrders from './pages/ShopViewOrders';
+import UserOwnProfile from './pages/UserOwnProfile';
+import UserEdit from './pages/UserEdit';
 function App() {
   return (
    <BrowserRouter>
@@ -50,6 +52,8 @@ function App() {
     <Route path='/creditCard' element={<CreditCard/>}/>
     <Route path='/upi' element={<UpiPayment/>}/>
     <Route path='/shopViewOrders' element={<ShopViewOrders/>}/>
+    <Route path='/userOwnProfile' element={<UserOwnProfile/>}/>
+    <Route path='/userEdit/:id' element={<UserEdit/>}/>
    </Routes>
    </BrowserRouter>
   );

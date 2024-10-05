@@ -42,6 +42,7 @@ export default function Login() {
             localStorage.setItem('emailId', JSON.stringify(res.data.data.email))
             localStorage.setItem('password', JSON.stringify(res.data.data.password))
             localStorage.setItem('role', JSON.stringify(res.data.data.role))
+            localStorage.setItem('token',(res.data.token))
 
             navigate('/')
         }).catch((error) => {

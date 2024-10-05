@@ -16,9 +16,16 @@ export default function OwnProductsView() {
   
   useEffect(()=>{
     const shop_login_id = JSON.parse(localStorage.getItem('loginId'));
+    const token=localStorage.getItem('token');
+    console.log("token==>",token);
+    
     console.log("id==>",shop_login_id);
     
-    axios.get(`http://localhost:5000/api/shop/shopAdd-productView/${shop_login_id}`).then((res)=>{
+    axios.get(`http://localhost:5000/api/shop/shopAdd-productView/`,{
+      headers:{
+        Authorization: `Bearer ${token}`
+      }
+    }).then((res)=>{
       console.log("data==>",res.data.data);
       setView(res.data.data)
     }) .catch((error) => {

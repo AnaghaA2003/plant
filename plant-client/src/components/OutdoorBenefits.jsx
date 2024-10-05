@@ -3,7 +3,7 @@ import React from 'react'
 export default function OutdoorBenefits() {
   return (
     <div className='benefit'>
-    <p>
+    <p className='benefit-2'>
       <b><br></br><br></br>
         <h3 className='h3' >Benefits of Keeping Live Plants Outdoors</h3><br></br><br></br>
         <i style={{ fontSize: 20, color: "green" }}>
