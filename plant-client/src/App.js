@@ -27,6 +27,7 @@ import UserOwnProfile from './pages/UserOwnProfile';
 import UserEdit from './pages/UserEdit';
 import ForgotPassword from './pages/ForgotPassword';
 import Verification from './pages/Verification';
+import SetNewPassword from './pages/SetNewPassword';
 function App() {
   return (
    <BrowserRouter>
@@ -58,6 +59,7 @@ function App() {
     <Route path='/userEdit/:id' element={<UserEdit/>}/>
     <Route path='/forgotPassword' element={<ForgotPassword/>}/>
     <Route path='/verification' element={<Verification/>}/>
+    <Route path='/newPassword' element={<SetNewPassword/>}/>
    </Routes>
    </BrowserRouter>
   );
