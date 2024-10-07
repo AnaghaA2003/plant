@@ -1,7 +1,6 @@
 const express = require('express')
 const shopSchema = require('../models/shopSchema')
 
-
 const cloudinary = require("cloudinary").v2
 const { CloudinaryStorage } = require("multer-storage-cloudinary")
 const multer = require("multer")
@@ -9,6 +8,7 @@ const productSchema = require('../models/productSchema')
 const cartSchema = require('../models/cartSchema')
 const { default: mongoose } = require('mongoose')
 const checkauth = require('../middleware/checkauth')
+const orderSchema = require('../models/orderSchema')
 require('dotenv').config();
 
 
@@ -222,29 +222,40 @@ shopRoutes.get('/shopAdd-productView/', checkauth, async (req, res) => {
 shopRoutes.get('/shopView-productOrder/:id', async (req, res) => {
     try {
         const id = req.params.id
-        const viewData = await cartSchema.aggregate([
-            {
-              '$lookup': {
-                'from': 'users', 
-                'localField': 'user_loginId', 
-                'foreignField': 'loginId', 
-                'as': 'user'
-              }
-            }, {
-              '$lookup': {
-                'from': 'products', 
-                'localField': 'product_Id', 
-                'foreignField': '_id', 
-                'as': 'product'
-              }
-            }, {
-              '$lookup': {
-                'from': 'shops', 
-                'localField': 'product.shop_login_id', 
-                'foreignField': 'loginId', 
-                'as': 'shop'
-              }
-            },
+        console.log("id==>",id);
+        
+        const viewData = await orderSchema.aggregate([
+            
+                {
+                  '$lookup': {
+                    'from': 'products', 
+                    'localField': 'product_Id', 
+                    'foreignField': '_id', 
+                    'as': 'product'
+                  }
+                }, {
+                  '$lookup': {
+                    'from': 'users', 
+                    'localField': 'user_loginId', 
+                    'foreignField': 'loginId', 
+                    'as': 'user'
+                  }
+                }, {
+                  '$lookup': {
+                    'from': 'shops', 
+                    'localField': 'product.shop_login_id', 
+                    'foreignField': 'loginId', 
+                    'as': 'shop'
+                  }
+                }, {
+                    '$lookup': {
+                      'from': 'logins', 
+                      'localField': 'user_loginId', 
+                      'foreignField': '_id', 
+                      'as': 'login'
+                    }
+                  },
+              
             {
                 '$unwind':'$user'
             },
@@ -254,16 +265,16 @@ shopRoutes.get('/shopView-productOrder/:id', async (req, res) => {
             {
                 '$unwind':'$product'
             },
+            // {
+            //     '$unwind':'$login'
+
+            // },
             {
                 '$match':{
                     'product.shop_login_id': new mongoose.Types.ObjectId(id)
                 }
             },
-            {
-                '$match':{
-                    'status' :'order placed'
-                }
-            },
+          
             {
                 '$group':{
                     '_id':'$_id',
@@ -278,6 +289,7 @@ shopRoutes.get('/shopView-productOrder/:id', async (req, res) => {
                     'Mobile':{'$first':'$user.Mobile'},
                     'user_img':{'$first':'$user.user_img'},
                     'status':{'$first':'$status'},
+                    'email':{'$first':'$login.email'}
                     
 
 

@@ -63,7 +63,8 @@ export default function NavBar() {
                   <NavDropdown.Item href="/outdoor">Outdoor Plants</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/add" style={{ color: "rgb(51, 153, 11)" }}>Add Product</Nav.Link>
-                <Nav.Link href="/ownProduct" style={{ color: "rgb(51, 153, 11)" }}>View Products</Nav.Link>
+                <Nav.Link href="/ownProduct" style={{ color: "rgb(51, 153, 11)" }}>My Products</Nav.Link>
+                <Nav.Link href="/shopViewOrders" style={{ color: "rgb(51, 153, 11)" }}>Order Product Details</Nav.Link>
                 <Nav.Link href="/shopownProfile" style={{ color: "rgb(51, 153, 11)" }}>Profile</Nav.Link>
               </Nav>
               <div className="d-flex gap-2">

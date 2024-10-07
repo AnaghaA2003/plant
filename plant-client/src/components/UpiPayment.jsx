@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './upiPayment.css'
 import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 export default function UpiPayment() {
   const [ViewCart, setViewCart] = useState([])
@@ -11,6 +12,7 @@ export default function UpiPayment() {
     expDate: '',
     cvv: '',
   })
+  const navigate=useNavigate()
   const [error, setError] = useState({})
   const inputChange = (event) => {
     const name = event.target.name
@@ -38,9 +40,11 @@ export default function UpiPayment() {
     axios.get(`http://localhost:5000/api/order/cart-addproduct-order/${_id}`).then((res)=>{
       console.log(res.data.message);
       toast.success(res.data.message)
-      
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
     })
-
+   
 
 
 

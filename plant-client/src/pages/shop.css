@@ -52,6 +52,7 @@
 /* }  */ 
 .imgContainer{
     background-color: lightcyan;
+    margin: auto;
 }
 
 
@@ -386,7 +387,7 @@
   .shopImage{
     display: grid;
     justify-content: center;
-    margin-left: 6%;
+   margin: auto;
   }
 }
 
@@ -394,7 +395,8 @@
   .shopImage{
     display: grid;
     justify-content: center;
-    margin-left: 10%;
+    /* margin-left: 10%; */
+    margin: auto;
   }
 }
 
@@ -435,7 +437,7 @@
 
 @media screen and (max-width:453px){
   .card1 {
-    width: 453px !important;
+    width: 356px !important;
     height: 200px;
     background: #243137;
     position: relative;
@@ -448,10 +450,16 @@
     /* margin-left: 30%; */
     
   }
+  .shopHead{
+    text-align: center;
+     font-family: fantasy;
+      font-size: 30px; 
+      color: lightcoral
+  }
 }
 @media screen and (max-width:375px){
   .card1 {
-    width: 372px !important;
+    width: 312px !important;
     height: 200px;
     background: #243137;
     position: relative;
@@ -460,8 +468,9 @@
     border-radius: 10px;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
-    margin: 20px;
+    /* margin: 20px; */
     /* margin-left: 30%; */
+    margin: auto;
     
   }
 }

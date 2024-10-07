@@ -73,7 +73,7 @@ export default function WishList() {
                     <h3 style={{ fontSize: "40px", fontFamily: "fantasy " }}>My WishList</h3>
                 </div>
                 <Toaster/>
-                <div style={{display:"flex"}}>
+                <div style={{display:"flex",justifyContent:"center",flexWrap:"wrap"}}>
                 {wishlist.map((value, index) => (
                     
                     <div className="main">
