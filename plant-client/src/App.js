@@ -25,6 +25,8 @@ import UpiPayment from './components/UpiPayment';
 import ShopViewOrders from './pages/ShopViewOrders';
 import UserOwnProfile from './pages/UserOwnProfile';
 import UserEdit from './pages/UserEdit';
+import ForgotPassword from './pages/ForgotPassword';
+import Verification from './pages/Verification';
 function App() {
   return (
    <BrowserRouter>
@@ -54,6 +56,8 @@ function App() {
     <Route path='/shopViewOrders' element={<ShopViewOrders/>}/>
     <Route path='/userOwnProfile' element={<UserOwnProfile/>}/>
     <Route path='/userEdit/:id' element={<UserEdit/>}/>
+    <Route path='/forgotPassword' element={<ForgotPassword/>}/>
+    <Route path='/verification' element={<Verification/>}/>
    </Routes>
    </BrowserRouter>
   );

@@ -89,7 +89,7 @@ export default function Login() {
                     <input type="password" className="input" placeholder="*********" name='password' onChange={inputChange} /><br />
                     <button className='login-butn' onClick={submit}>Submit</button><br></br>
                     <div className="foot-lnk" style={{ display: "flex", justifyContent: "space-around" }}>
-                        <div><a href="#forgot" className='forget'>Forgot Password?</a></div>
+                        <div><a href="/forgotPassword" className='forget'>Forgot Password?</a></div>
                         <div style={{ display: "grid" }}> Don't have an account yet?
                             <Link to="/userRegistration" className='forget' >
                                 Create User Account
