@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import './password.css'
 import { useNavigate } from 'react-router-dom'
-import { Navbar, Nav, NavDropdown, Button, Container } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Button, Container, Toast } from 'react-bootstrap';
+import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export default function ForgotPassword() {
@@ -9,6 +11,8 @@ export default function ForgotPassword() {
     email: '',
    
 })
+console.log("input==>",input);
+
 const [error, setError] = useState({})
 const inputChange = (event) => {
   const name = event.target.name
@@ -24,8 +28,22 @@ const inputChange = (event) => {
         return;
 
     }
+    axios.post(`http://localhost:5000/api/auth/email-verification`,input).then((res)=>{
+      console.log(res.data.message);
+      toast.success(res.data.message)
+      console.log("res.data.email==>",res);
+      
+      localStorage.setItem('email',(res.data.email))
+      localStorage.setItem('OTP',(res.data.otp))
+      navigate('/verification')
+      
+    }).catch((error) => {
+      console.log(error.response.data.message);
+      // console.log(error.res.data.message);
+      toast.error(error.response.data.message)
 
-        navigate('/verification')
+  })
+
     }
     const back=()=>{
         navigate('/login')
@@ -56,6 +74,7 @@ const inputChange = (event) => {
    <Navbar.Brand href="/">
           <i className="fa fa-pagelines fa-2x" style={{ color: "#1ebe96" }}> plant </i>
         </Navbar.Brand>
+        <Toaster/>
   <div className="form-gap" />
   <div className="container-forgot">
     <div className="row-forgot">

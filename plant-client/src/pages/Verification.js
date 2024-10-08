@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './verification.css'
 import { useNavigate } from 'react-router-dom'
 import { Navbar, Nav, NavDropdown, Button, Container } from 'react-bootstrap';
 
 
 export default function Verification() {
-  const navigate=useNavigate()
-  const back=()=>{
+  const[otp,setOtp]=useState('')
+  console.log("opt==>",otp);
+  
+  const navigate = useNavigate()
+  const back = () => {
     navigate('/login')
-}
-const submit=()=>{
-  navigate('/newPassword')
-}
+  }
+  const submit = () => {
+    navigate('/newPassword')
+  }
+  const email = (localStorage.getItem('email'))
+  
+  const inputChange=(event)=>{
+    // const name=event.target.name
+    const value=event.target.value
+    // setOtp({otp,[name]:value})
+    setOtp(otp+value)
+  }
+
   return (
     <>
       <link
@@ -23,8 +35,8 @@ const submit=()=>{
         rel="stylesheet"
       />
       <Navbar.Brand href="/">
-          <i className="fa fa-pagelines fa-2x" style={{ color: "#1ebe96" }}> plant </i>
-        </Navbar.Brand>
+        <i className="fa fa-pagelines fa-2x" style={{ color: "#1ebe96" }}> plant </i>
+      </Navbar.Brand>
       <div className="form-gap" />
       <div className="container-forgot">
         <div className="row-forgot">
@@ -38,14 +50,14 @@ const submit=()=>{
                   </h3>
                   <h2 className="text-center">Password Reset</h2>
                   <p>Enter the code we just send on your email address<br></br>
-                    <b className="text-danger">anagha@gmail.com</b>
+                    <b className="text-danger">{email}</b>
                   </p>
                   <div className="panel-body">
-                    <div className="d-flex flex-row mt-5" style={{ display: "flex", textAlign: "center", justifyContent:"center",flexWrap:"wrap"}}>
-                      <input type="text" className="form-control" style={{ height: "50px", width: "80px" }} autofocus="" />
-                      <input type="text" className="form-control" style={{ height: "50px", width: "80px" }} />
-                      <input type="text" className="form-control" style={{ height: "50px", width: "80px" }} />
-                      <input type="text" className="form-control" style={{ height: "50px", width: "80px" }} />
+                    <div className="d-flex flex-row mt-5" style={{ display: "flex", textAlign: "center", justifyContent: "center", flexWrap: "wrap" }}>
+                      <input type="text" className="form-control" style={{ height: "50px", width: "80px" }} autofocus="" onChange={inputChange} />
+                      <input type="text" className="form-control" style={{ height: "50px", width: "80px" }} onChange={inputChange} />
+                      <input type="text" className="form-control" style={{ height: "50px", width: "80px" }} onChange={inputChange} />
+                      <input type="text" className="form-control" style={{ height: "50px", width: "80px" }} onChange={inputChange} />
                     </div>
                     <form
                       id="register-form"
@@ -54,11 +66,11 @@ const submit=()=>{
                       className="form"
                       method="post"
                     >
-                      <br/>
+                      <br />
                       <div className="text-center mt-5">
                         <span className="d-block mobile-text">Don't receive the code?</span>
                         <span className="font-weight-bold text-danger cursor">Resend</span>
-                      </div><br/>
+                      </div><br />
                       <div className="form-group">
                         <input
                           name="recover-submit"

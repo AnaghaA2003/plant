@@ -74,6 +74,7 @@ export default function SetNewPassword() {
                         className="btn btn-lg btn-primary btn-block"
                         defaultValue="Reset Password"
                         type="Reset Password"
+                        placeholder='Reset Password'
                        
                       />
                     </div>
