@@ -2,26 +2,69 @@ import React, { useState } from 'react'
 import './verification.css'
 import { useNavigate } from 'react-router-dom'
 import { Navbar, Nav, NavDropdown, Button, Container } from 'react-bootstrap';
+import toast, { Toaster } from 'react-hot-toast';
+import axios from 'axios';
 
 
 export default function Verification() {
-  const[otp,setOtp]=useState('')
-  console.log("opt==>",otp);
   
+  const [otp, setOtp] = useState('')
+  console.log("opt==>", otp);
+
   const navigate = useNavigate()
   const back = () => {
     navigate('/login')
   }
-  const submit = () => {
-    navigate('/newPassword')
-  }
+
   const email = (localStorage.getItem('email'))
-  
-  const inputChange=(event)=>{
+  const OTP = (localStorage.getItem('OTP'))
+
+  const inputChange = (event) => {
     // const name=event.target.name
-    const value=event.target.value
+    const value = event.target.value
     // setOtp({otp,[name]:value})
-    setOtp(otp+value)
+    setOtp(otp + value)
+  }
+  const submit = (event) => {
+    event.preventDefault()
+    console.log("state==>", otp);
+    console.log("OTP==>", OTP);
+
+    if (otp == OTP) {
+      navigate('/newPassword')
+      console.log('set');
+
+    }
+    else {
+      console.log("OTP verification failed");
+      toast.error("OTP verification failed")
+    }
+
+  }
+
+  const resend = (event) => {
+    event.preventDefault()
+    const data ={
+      email:localStorage.getItem('email')
+    }
+    axios.post(`http://localhost:5000/api/auth/email-verification`, data).then((res) => {
+      console.log(res.data.message);
+      toast.success(res.data.message)
+      console.log("res.data.email==>", res);
+
+    
+      localStorage.setItem('OTP', (res.data.otp))
+     
+        navigate('/verification')
+
+    
+
+    }).catch((error) => {
+      console.log(error.response.data.message);
+      // console.log(error.res.data.message);
+      toast.error(error.response.data.message)
+
+    })
   }
 
   return (
@@ -37,6 +80,7 @@ export default function Verification() {
       <Navbar.Brand href="/">
         <i className="fa fa-pagelines fa-2x" style={{ color: "#1ebe96" }}> plant </i>
       </Navbar.Brand>
+      <Toaster />
       <div className="form-gap" />
       <div className="container-forgot">
         <div className="row-forgot">
@@ -69,25 +113,20 @@ export default function Verification() {
                       <br />
                       <div className="text-center mt-5">
                         <span className="d-block mobile-text">Don't receive the code?</span>
-                        <span className="font-weight-bold text-danger cursor">Resend</span>
+                        <span className="font-weight-bold text-danger cursor" onClick={resend}>Resend</span>
                       </div><br />
                       <div className="form-group">
-                        <input
+                        {/* <input
                           name="recover-submit"
                           className="btn btn-lg btn-primary btn-block"
                           defaultValue="Reset Password"
                           type="submit"
                           onClick={submit}
 
-                        />
+                        /> */}
+                        <Button className="btn btn-lg btn-primary btn-block" type="submit" onClick={submit}>Submit</Button>
                       </div>
-                      <input
-                        type="hidden"
-                        className="hide"
-                        name="token"
-                        id="token"
-                        defaultValue=""
-                      />
+
                       <div onClick={back}>Back to login<br></br><i class="fa fa-arrow-left" ></i></div>
                     </form>
                   </div>

@@ -105,7 +105,7 @@ export default function WishList() {
                             y="0px"
                             width="100px"
                             height="100px"
-                            viewBox="0 0 100 100"
+                            viewBox="0 0 100 100" 
                             xmlSpace="preserve"
                         >
                             {" "}
