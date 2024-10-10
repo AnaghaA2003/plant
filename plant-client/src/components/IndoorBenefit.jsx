@@ -19,6 +19,7 @@ export default function IndoorBenefit() {
         Overall, incorporating indoor plants into your environment creates a healthier,
         more calming, and visually appealing atmosphere.
       </p>
+      
     </div>
   );
 }

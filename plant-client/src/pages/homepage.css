@@ -172,3 +172,133 @@
 
 
   
+
+
+
+
+
+
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Abel&family=Open+Sans:wght@300&display=swap');
+
+:root {
+  --colorTheme: #f0f0f0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.imghome {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+sup {
+  font-size: 0.6em;
+}
+
+.pghome {
+  font-weight: 300;
+  color: #111 !important;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.gridhome {
+  background: var(--colorTheme);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  display: grid;
+  grid-gap: 2em;
+  min-height: 100vh;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.gridhome span {
+  display: block;
+}
+
+.cover img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.title .text-bold {
+  font-family: 'Abel', sans-serif;
+}
+
+.title--primary,
+.title--secondary,
+.info {
+  z-index: 2;
+}
+
+.title--secondary {
+  text-align: right;
+}
+
+.title--secondary .text-bold {
+  font-size: max(6vw, 40px);
+}
+
+.title--primary .text-bold {
+  font-size: max(10vw, 60px);
+}
+
+.info {
+  grid-column: 1/2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.info li {
+  margin-top: 1.5em;
+}
+
+@media (min-width: 860px) {
+  .gridhome {
+    grid-template-rows: minmax(1em, auto) max-content 1fr 3em minmax(1em, auto);
+    grid-template-columns: 4fr repeat(4, 1fr) 4fr;
+    grid-gap: 0 10px;
+    height: 100vh;
+    min-height: 600px;
+  }
+
+  .title--secondary {
+    grid-row: 2/3;
+    grid-column: 1 / 3;
+  }
+
+
+
+  .title--primary {
+    grid-row: 4/6;
+    grid-column: 5/7;
+  }
+
+  .cover {
+    grid-row: 2/5;
+    grid-column: 2 / span 4;
+  }
+
+  .info {
+    grid-row: 3/5;
+    grid-column: 1/2;
+    align-self: flex-end;
+  }
+}

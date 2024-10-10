@@ -129,10 +129,14 @@ export default function AllProduct() {
       <Nav />
 
       <div>
+      <h1 style={{ textAlign: "center" }}>All products </h1>
 
-        <h1 style={{ textAlign: "center" }}>All products</h1><br></br>
+
         <div style={{ textAlign: "center" }}>
-          <h3>Category</h3>
+
+          <h3 style={{height:"90px",width:"80px",position:"relative",textAlign:"center",margin:"auto",display:"flex",padding:"auto",zIndex:'-5'}}>
+      <img src='/img/pg1.png' style={{height:"90px",width:"80px",position:"absolute",textAlign:"center",margin:"auto",display:"flex",zIndex:'-6', }}></img>
+      Category</h3>
           <button className="button type1">
             <span className="btn-txt" onClick={() => { Category('') }}>All</span>
           </button>

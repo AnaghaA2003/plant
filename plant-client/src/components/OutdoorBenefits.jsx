@@ -1,8 +1,9 @@
 import React from 'react'
+import './outdoorBenefit.css'
 
 export default function OutdoorBenefits() {
   return (
-    <div className='benefit'>
+    <div className='benefit' >
     <p className='benefit-2'>
       <b><br></br><br></br>
         <h3 className='h3' >Benefits of Keeping Live Plants Outdoors</h3><br></br><br></br>
